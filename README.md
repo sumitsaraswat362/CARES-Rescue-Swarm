@@ -123,24 +123,11 @@ CARES-Rescue-Swarm/
 
 ---
 
-## 👥 Team
-
-| Name | Role |
-|---|---|
-| Sumit Saraswat | Architecture, Algorithms (CBBA, ORCA, EKF), Backend |
-| Tanmay Kaushal | Simulation, Testing, Monte Carlo Validation |
-| Vansh Kumar | Communications Model, Mesh Networking |
-| Ayushi Katara | Scenario Design, Documentation |
-| Jahanvi Chaurasia | Dashboard, Visualization |
-
----
-
 ## 🏅 Creator Credentials
 
 This system was built by **Sumit Saraswat**, selected as part of:
 - 🥇 **Google Gen AI Elite Club — Top 75 / 196,000+ developers across 12 APAC countries** (Cohort 2, 2026)
 - 🥇 **Meta PyTorch OpenEnv Hackathon — Top 100 Globally** (Multi-Agent RL)
-- 🏆 **Smart India Hackathon Finalist** (PSID 26033 — Annapurna AI Marketplace)
 
 ---
 
