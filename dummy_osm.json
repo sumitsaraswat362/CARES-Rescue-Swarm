@@ -1,0 +1,12 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API",
+  "elements": [
+    { "type": "node", "id": 1, "lat": 19.126, "lon": 72.906 },
+    { "type": "node", "id": 2, "lat": 19.127, "lon": 72.906 },
+    { "type": "node", "id": 3, "lat": 19.127, "lon": 72.907 },
+    { "type": "node", "id": 4, "lat": 19.126, "lon": 72.907 },
+    { "type": "way", "id": 10, "nodes": [1, 2, 3, 4, 1], "tags": { "building": "yes" } }
+  ]
+}
+

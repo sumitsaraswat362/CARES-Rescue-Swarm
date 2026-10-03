@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "errors": [],
+  "scope": "one recorded waypoint flight only; no dwell, swarm, radio recovery or field validation",
+  "raw_sha256": "bf6de26bb088841ba88129bb74227ebadd036a247addc0b6da097e96ff28ce4b",
+  "ordered_hits": [
+    {
+      "waypoint": [
+        0,
+        0,
+        5
+      ],
+      "measured": [
+        0.10791601240634918,
+        0.000060034755733795464,
+        3.0184342861175537
+      ],
+      "time": 799.627431437,
+      "error_m": 1.984502090644479
+    },
+    {
+      "waypoint": [
+        10,
+        0,
+        5
+      ],
+      "measured": [
+        8.182778358459473,
+        0.6145458817481995,
+        4.653988838195801
+      ],
+      "time": 802.059378105,
+      "error_m": 1.949278035414654
+    },
+    {
+      "waypoint": [
+        0,
+        0,
+        5
+      ],
+      "measured": [
+        1.6968709230422974,
+        -1.0401087999343872,
+        4.890201568603516
+      ],
+      "time": 804.227054015,
+      "error_m": 1.9933020194402298
+    }
+  ],
+  "final_pose": {
+    "monotonic": 815.46007201,
+    "event": "position",
+    "enu": [
+      -2.643385887145996,
+      -0.03191589191555977,
+      -0.03455294668674469
+    ]
+  },
+  "post_route_disarm": {
+    "monotonic": 815.462963282,
+    "event": "status",
+    "armed": false,
+    "offboard": true
+  },
+  "records": 2344
+}

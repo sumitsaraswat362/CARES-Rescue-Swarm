@@ -1,0 +1,96 @@
+name: Frozen 600-run simulation qualification v2
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/competitive-release]
+    paths: ['.github/workflows/qualification.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  protocol:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: candidate
+      - uses: actions/checkout@v4
+        with:
+          ref: 151ac89e09cc0c6cd6e4ab8349b95e5bb6a5cf67
+          path: reference
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r candidate/requirements-dev.txt
+      - name: Freeze inputs and reserved seeds before any run
+        run: |
+          python candidate/tools/qualification.py freeze --reference "$GITHUB_WORKSPACE/reference" --candidate "$GITHUB_WORKSPACE/candidate" --out "$GITHUB_WORKSPACE/protocol.json" --seed-epoch 1
+          python -m pip freeze > requirements-frozen.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qualification-protocol
+          path: |
+            protocol.json
+            requirements-frozen.txt
+          retention-days: 14
+  runs:
+    needs: protocol
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: candidate
+      - uses: actions/checkout@v4
+        with:
+          ref: 151ac89e09cc0c6cd6e4ab8349b95e5bb6a5cf67
+          path: reference
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: qualification-protocol
+      - run: python -m pip install -r requirements-frozen.txt
+      - name: Execute assigned immutable jobs and retain failures
+        run: |
+          python candidate/tools/qualification.py run protocol.json --out "$GITHUB_WORKSPACE/evidence" --workers 2 --shard-index ${{ matrix.shard }} --shard-count 10
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qualification-shard-${{ matrix.shard }}
+          path: evidence
+          retention-days: 14
+          if-no-files-found: error
+  acceptance:
+    if: always() && needs.protocol.result == 'success'
+    needs: [protocol, runs]
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: candidate
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: qualification-protocol
+      - name: Independently re-audit raw shards with bounded disk usage
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python candidate/tools/accept_qualification.py protocol.json evidence --out acceptance.json --github-run-id "$GITHUB_RUN_ID" --github-repository "$GITHUB_REPOSITORY" --github-shard-count 24
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qualification-acceptance
+          path: acceptance.json
+          retention-days: 14
+          if-no-files-found: error

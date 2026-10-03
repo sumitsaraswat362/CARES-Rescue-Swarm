@@ -1,0 +1,215 @@
+{
+  "schema": "cares-connectivity-diagnosis/v1",
+  "seed": 100,
+  "source_sha256": "154961a940841f2e3acff8fd5515259bb9186e09079fa05ef214914cc1f7848c",
+  "raw_trace_sha256": "c0723899957847ac6ba0998c0277e0dad2f1917f3fe43e7e146ccfeae733ca30",
+  "duration_s": 900.0000000001361,
+  "all_active_connected_pct": 13.299999999997707,
+  "operational_population_time_s": 900.0000000001361,
+  "all_radio_capable_survivors_connected_pct": 13.299999999997707,
+  "permanent_radio_exclusion_present_s": 704.6000000000917,
+  "per_vehicle": {
+    "0": {
+      "active_s": 900.0000000001361,
+      "reachable_s": 900.0000000001361,
+      "radio_failed_s": 0.0,
+      "no_graph_route_s": 0.0
+    },
+    "1": {
+      "active_s": 900.0000000001361,
+      "reachable_s": 900.0000000001361,
+      "radio_failed_s": 0.0,
+      "no_graph_route_s": 0.0
+    },
+    "2": {
+      "active_s": 73.10000000000012,
+      "reachable_s": 73.10000000000012,
+      "radio_failed_s": 0.0,
+      "no_graph_route_s": 0.0
+    },
+    "3": {
+      "active_s": 900.0000000001361,
+      "reachable_s": 128.299999999997,
+      "radio_failed_s": 0.0,
+      "no_graph_route_s": 771.7000000001069
+    },
+    "4": {
+      "active_s": 900.0000000001361,
+      "reachable_s": 891.4000000001341,
+      "radio_failed_s": 0.0,
+      "no_graph_route_s": 8.599999999999985
+    },
+    "5": {
+      "active_s": 900.0000000001361,
+      "reachable_s": 195.39999999999318,
+      "radio_failed_s": 704.6000000000917,
+      "no_graph_route_s": 0.0
+    },
+    "6": {
+      "active_s": 900.0000000001361,
+      "reachable_s": 886.400000000133,
+      "radio_failed_s": 0.0,
+      "no_graph_route_s": 13.599999999999968
+    },
+    "7": {
+      "active_s": 900.0000000001361,
+      "reachable_s": 900.0000000001361,
+      "radio_failed_s": 0.0,
+      "no_graph_route_s": 0.0
+    }
+  },
+  "population_transitions": [
+    {
+      "interval_start_s": 0.0,
+      "sample_time_s": 0.1,
+      "active_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "operational_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "excluded": []
+    },
+    {
+      "interval_start_s": 73.1,
+      "sample_time_s": 73.2,
+      "active_ids": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "operational_ids": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "excluded": [
+        {
+          "id": 2,
+          "reason": "aircraft_failed"
+        }
+      ]
+    },
+    {
+      "interval_start_s": 195.4,
+      "sample_time_s": 195.5,
+      "active_ids": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "operational_ids": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "excluded": [
+        {
+          "id": 2,
+          "reason": "aircraft_failed"
+        },
+        {
+          "id": 5,
+          "reason": "radio_failed"
+        }
+      ]
+    }
+  ],
+  "disconnections": [
+    {
+      "id": 4,
+      "start_s": 72.4,
+      "reason": "no_graph_route",
+      "initial_state": "scout",
+      "initial_position": [
+        400.0,
+        300.0,
+        70.0
+      ],
+      "end_s": 76.0,
+      "duration_s": 3.5999999999999943
+    },
+    {
+      "id": 4,
+      "start_s": 92.5,
+      "reason": "no_graph_route",
+      "initial_state": "scout",
+      "initial_position": [
+        394.00535683348363,
+        316.7850008662467,
+        70.0
+      ],
+      "end_s": 97.5,
+      "duration_s": 5.0
+    },
+    {
+      "id": 3,
+      "start_s": 128.3,
+      "reason": "no_graph_route",
+      "initial_state": "relay",
+      "initial_position": [
+        1840.736143866045,
+        932.6279274033973,
+        60.0
+      ],
+      "end_s": 900.0,
+      "duration_s": 771.7
+    },
+    {
+      "id": 6,
+      "start_s": 141.4,
+      "reason": "no_graph_route",
+      "initial_state": "scout",
+      "initial_position": [
+        1473.6266044899662,
+        663.1866977550169,
+        90.0
+      ],
+      "end_s": 155.0,
+      "duration_s": 13.599999999999994
+    },
+    {
+      "id": 5,
+      "start_s": 195.4,
+      "reason": "radio_failed",
+      "initial_state": "idle",
+      "initial_position": [
+        1200.0,
+        1200.0,
+        80.0
+      ],
+      "end_s": 900.0,
+      "duration_s": 704.6
+    }
+  ],
+  "limits": "Graph reachability only, not packet delivery. No heartbeat age, route belief, or recovery cause is inferred from missing telemetry."
+}

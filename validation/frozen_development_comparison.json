@@ -1,0 +1,839 @@
+{
+  "schema": "cares-paired-comparison/v1",
+  "pairs": [
+    {
+      "scenario_sha256": "392a9415dacfa6347188c4b2a14fff55af67611947ce143ff9212601d35620b7",
+      "seed": 100,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 43.75,
+          "candidate": 56.25,
+          "difference": 12.5
+        },
+        "priority_weighted_pct": {
+          "reference": 38.59649122807018,
+          "candidate": 52.63157894736842,
+          "difference": 14.03508771929824
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 13.299999999997707,
+          "candidate": 29.93805918788289,
+          "difference": 16.638059187885183
+        },
+        "latency_p95_s": {
+          "reference": 6.440000000000003,
+          "candidate": 4.519999999999981,
+          "difference": -1.9200000000000221
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 13.299999999997707,
+          "candidate": 96.31796283551229,
+          "difference": 83.01796283551458
+        }
+      },
+      "reference_raw_sha256": "c0723899957847ac6ba0998c0277e0dad2f1917f3fe43e7e146ccfeae733ca30",
+      "candidate_raw_sha256": "386d6bb230716e79b693e0098937db47d50d515cbec8194e033a42980a79f023",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": false,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "392a9415dacfa6347188c4b2a14fff55af67611947ce143ff9212601d35620b7",
+      "seed": 101,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 43.75,
+          "candidate": 56.25,
+          "difference": 12.5
+        },
+        "priority_weighted_pct": {
+          "reference": 38.59649122807018,
+          "candidate": 52.63157894736842,
+          "difference": 14.03508771929824
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 13.588888888886537,
+          "candidate": 16.46666666666372,
+          "difference": 2.877777777777183
+        },
+        "latency_p95_s": {
+          "reference": 11.760000000000007,
+          "candidate": 3.0,
+          "difference": -8.760000000000007
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 13.588888888886537,
+          "candidate": 96.04444444444415,
+          "difference": 82.45555555555762
+        }
+      },
+      "reference_raw_sha256": "b73b9e8509021db03608cc60e1e3bd6ed262de160fe5dcf4addffa42a384f955",
+      "candidate_raw_sha256": "c27f80d05295b507fd6ad7a710d909f4b3e6cb963ece251b395beb9dd4e7e973",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "86a30ecf3e71fcabc547f75661551ffb9770e94059e827cd6583c5aef45305aa",
+      "seed": 100,
+      "mode": "cares",
+      "radio_config_sha256": "51b39ab534f27f616ee4ec2cd44d6fce4c4132f1f796431cc8a2325604eb7d18",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "priority_weighted_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "latency_p95_s": {
+          "reference": 0.6999999999999993,
+          "candidate": 0.6999999999999993,
+          "difference": 0.0
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        }
+      },
+      "reference_raw_sha256": "da1bdb7107069ad5e89c09522f2ea10e71212508b12dae065a3bdf7ee154bb15",
+      "candidate_raw_sha256": "da1bdb7107069ad5e89c09522f2ea10e71212508b12dae065a3bdf7ee154bb15",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "86a30ecf3e71fcabc547f75661551ffb9770e94059e827cd6583c5aef45305aa",
+      "seed": 101,
+      "mode": "cares",
+      "radio_config_sha256": "51b39ab534f27f616ee4ec2cd44d6fce4c4132f1f796431cc8a2325604eb7d18",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "priority_weighted_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "latency_p95_s": {
+          "reference": 0.6999999999999993,
+          "candidate": 0.6999999999999993,
+          "difference": 0.0
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        }
+      },
+      "reference_raw_sha256": "030b30419ac8074e8c9938ea881b39fa4fab2bdbc4f12695574030f500a5b1da",
+      "candidate_raw_sha256": "030b30419ac8074e8c9938ea881b39fa4fab2bdbc4f12695574030f500a5b1da",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "87fd45229a11c3fd3a804c79eb05cf24fcf3b65eb91924a51c6062ac761cb816",
+      "seed": 100,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "priority_weighted_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 97.64999999999974,
+          "candidate": 97.6666666666664,
+          "difference": 0.01666666666666572
+        },
+        "latency_p95_s": {
+          "reference": 3.939999999999997,
+          "candidate": 2.4399999999999977,
+          "difference": -1.4999999999999991
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 97.64999999999974,
+          "candidate": 97.6666666666664,
+          "difference": 0.01666666666666572
+        }
+      },
+      "reference_raw_sha256": "70e9c9c96160043c12be9656e1d5a03144d4440b06a26c5c597b54b292e6d812",
+      "candidate_raw_sha256": "dff2ed270fb595dbdca52b64ed8db5b99a07d0ad3d705921875f52ad033ccb6a",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "87fd45229a11c3fd3a804c79eb05cf24fcf3b65eb91924a51c6062ac761cb816",
+      "seed": 101,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "priority_weighted_pct": {
+          "reference": 100.0,
+          "candidate": 100.0,
+          "difference": 0.0
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 97.81666666666642,
+          "candidate": 97.83333333333309,
+          "difference": 0.01666666666666572
+        },
+        "latency_p95_s": {
+          "reference": 3.779999999999995,
+          "candidate": 0.8800000000000268,
+          "difference": -2.8999999999999684
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 97.81666666666642,
+          "candidate": 97.83333333333309,
+          "difference": 0.01666666666666572
+        }
+      },
+      "reference_raw_sha256": "52d53ec3f55df1507cad8214a0208bc6f965750f5bde85a8d2067e71aa25122b",
+      "candidate_raw_sha256": "2ccca596edf59ff50a0a4f01bc6feb91844cb1eac46c74b58dd899c4a8ccdfc2",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "9c2e6a364217857f87af64d58e83e27c7047b89624f732086c7595569b541c9e",
+      "seed": 100,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 37.5,
+          "candidate": 62.5,
+          "difference": 25.0
+        },
+        "priority_weighted_pct": {
+          "reference": 33.333333333333336,
+          "candidate": 61.40350877192982,
+          "difference": 28.070175438596486
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 13.511111111108775,
+          "candidate": 18.911111111107655,
+          "difference": 5.3999999999988795
+        },
+        "latency_p95_s": {
+          "reference": 8.299999999999986,
+          "candidate": 14.185000000000011,
+          "difference": 5.885000000000025
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 13.511111111108775,
+          "candidate": 97.19999999999979,
+          "difference": 83.68888888889101
+        }
+      },
+      "reference_raw_sha256": "b2c8bb8c4dacd1b9c057b076e7e4fb74fe7ead32d2628a1bc255dd2d33359ae3",
+      "candidate_raw_sha256": "72d54e020d5a775b84399c22ea005b8534934776ce071dd37ca60da78b0b63d5",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "9c2e6a364217857f87af64d58e83e27c7047b89624f732086c7595569b541c9e",
+      "seed": 101,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 43.75,
+          "candidate": 56.25,
+          "difference": 12.5
+        },
+        "priority_weighted_pct": {
+          "reference": 38.59649122807018,
+          "candidate": 52.63157894736842,
+          "difference": 14.03508771929824
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 13.622222222219863,
+          "candidate": 16.299999999997087,
+          "difference": 2.6777777777772247
+        },
+        "latency_p95_s": {
+          "reference": 4.569999999999976,
+          "candidate": 12.67999999999997,
+          "difference": 8.109999999999992
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 13.622222222219863,
+          "candidate": 95.6222222222219,
+          "difference": 82.00000000000203
+        }
+      },
+      "reference_raw_sha256": "1ffd83c84eaa925ed4d99821bc5f016cb2e25a23311dd593b8210f5b15dbebb2",
+      "candidate_raw_sha256": "b618b29d021a9717a90f171556a9a950f0d378a8958328be0dad96e3323b3628",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "a1d79eaf77709d229c82d64f81d15cb909819a38271a921f899b836f29ce555e",
+      "seed": 100,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 37.5,
+          "candidate": 56.25,
+          "difference": 18.75
+        },
+        "priority_weighted_pct": {
+          "reference": 33.333333333333336,
+          "candidate": 56.14035087719298,
+          "difference": 22.807017543859644
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 12.499999999997875,
+          "candidate": 18.38888888888554,
+          "difference": 5.888888888887664
+        },
+        "latency_p95_s": {
+          "reference": 10.924999999999983,
+          "candidate": 5.799999999999999,
+          "difference": -5.124999999999984
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 12.499999999997875,
+          "candidate": 87.77777777777685,
+          "difference": 75.27777777777897
+        }
+      },
+      "reference_raw_sha256": "97df4512a620e1eda45da7139858328c325be46bd693024a81955a83bd925c2c",
+      "candidate_raw_sha256": "76a1387cfbdf768cc41df79fa02272cd55ff72ed8f3803ddb5f34a586fba1656",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "a1d79eaf77709d229c82d64f81d15cb909819a38271a921f899b836f29ce555e",
+      "seed": 101,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 37.5,
+          "candidate": 50.0,
+          "difference": 12.5
+        },
+        "priority_weighted_pct": {
+          "reference": 33.333333333333336,
+          "candidate": 50.87719298245614,
+          "difference": 17.5438596491228
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 13.544444444442101,
+          "candidate": 16.455555555552607,
+          "difference": 2.9111111111105057
+        },
+        "latency_p95_s": {
+          "reference": 10.349999999999998,
+          "candidate": 4.6399999999999935,
+          "difference": -5.710000000000004
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 13.544444444442101,
+          "candidate": 84.25555555555437,
+          "difference": 70.71111111111226
+        }
+      },
+      "reference_raw_sha256": "057d7e81bff805c19f1183930fbeb444eb9f63d07b4e01bfcb917ed40e257a0a",
+      "candidate_raw_sha256": "d6a52260dbd748b8a1efc07ecb3961df16376b916828e6100f749838a15efc89",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "f6afab3e2a241dff1c152a054dd54621e46c34489bd759350903a2020079f64a",
+      "seed": 100,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 37.5,
+          "candidate": 62.5,
+          "difference": 25.0
+        },
+        "priority_weighted_pct": {
+          "reference": 33.333333333333336,
+          "candidate": 61.40350877192982,
+          "difference": 28.070175438596486
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 13.866666666664257,
+          "candidate": 19.38888888888533,
+          "difference": 5.522222222221073
+        },
+        "latency_p95_s": {
+          "reference": 6.349999999999998,
+          "candidate": 9.670000000000007,
+          "difference": 3.320000000000009
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 13.866666666664257,
+          "candidate": 89.43333333333254,
+          "difference": 75.56666666666828
+        }
+      },
+      "reference_raw_sha256": "cd177af32c78c64fc188117f1fd1e8b204915a74baf14b335642003a3f3696ac",
+      "candidate_raw_sha256": "6f97e848a4080b46472c231a5c900fbfd8fa523b480a7428431cc4ad558b6f62",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    },
+    {
+      "scenario_sha256": "f6afab3e2a241dff1c152a054dd54621e46c34489bd759350903a2020079f64a",
+      "seed": 101,
+      "mode": "cares",
+      "radio_config_sha256": "c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7",
+      "metrics": {
+        "delivered_completion_pct": {
+          "reference": 43.75,
+          "candidate": 56.25,
+          "difference": 12.5
+        },
+        "priority_weighted_pct": {
+          "reference": 38.59649122807018,
+          "candidate": 56.14035087719298,
+          "difference": 17.5438596491228
+        },
+        "all_uav_connectivity_pct": {
+          "reference": 13.866666666664257,
+          "candidate": 16.566666666663696,
+          "difference": 2.6999999999994397
+        },
+        "latency_p95_s": {
+          "reference": 5.239999999999983,
+          "candidate": 0.9599999999999909,
+          "difference": -4.279999999999992
+        },
+        "separation_violation_frames": {
+          "reference": 0,
+          "candidate": 0,
+          "difference": 0
+        },
+        "all_radio_capable_survivors_connected_pct": {
+          "reference": 13.866666666664257,
+          "candidate": 94.43333333333291,
+          "difference": 80.56666666666865
+        }
+      },
+      "reference_raw_sha256": "6732502dd6963f421d4c7b621924bdc7e7c2d419c717900b5636d5ccdce91db0",
+      "candidate_raw_sha256": "9aaad17a8e56d6dd969bb6b3c742b673ec17e9afd208afe9c8e786bae437d433",
+      "reference_evidence_consistent": true,
+      "candidate_evidence_consistent": true,
+      "reference_safety_passed": true,
+      "candidate_safety_passed": true
+    }
+  ],
+  "unmatched_reference": [],
+  "unmatched_candidate": [],
+  "groups": {
+    "392a9415dacfa6347188c4b2a14fff55af67611947ce143ff9212601d35620b7:cares:c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7": {
+      "delivered_completion_pct": {
+        "mean_difference": 12.5,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 12.5,
+        "bootstrap_95_high": 12.5,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "priority_weighted_pct": {
+        "mean_difference": 14.03508771929824,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 14.03508771929824,
+        "bootstrap_95_high": 14.03508771929824,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_uav_connectivity_pct": {
+        "mean_difference": 9.757918482831183,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 2.877777777777183,
+        "bootstrap_95_high": 16.638059187885183,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "latency_p95_s": {
+        "mean_difference": -5.340000000000014,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": -8.760000000000007,
+        "bootstrap_95_high": -1.9200000000000221,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "separation_violation_frames": {
+        "mean_difference": 0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0,
+        "bootstrap_95_high": 0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_radio_capable_survivors_connected_pct": {
+        "mean_difference": 82.73675919553611,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 82.45555555555762,
+        "bootstrap_95_high": 83.01796283551458,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      }
+    },
+    "86a30ecf3e71fcabc547f75661551ffb9770e94059e827cd6583c5aef45305aa:cares:51b39ab534f27f616ee4ec2cd44d6fce4c4132f1f796431cc8a2325604eb7d18": {
+      "delivered_completion_pct": {
+        "mean_difference": 0.0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.0,
+        "bootstrap_95_high": 0.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "priority_weighted_pct": {
+        "mean_difference": 0.0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.0,
+        "bootstrap_95_high": 0.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_uav_connectivity_pct": {
+        "mean_difference": 0.0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.0,
+        "bootstrap_95_high": 0.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "latency_p95_s": {
+        "mean_difference": 0.0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.0,
+        "bootstrap_95_high": 0.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "separation_violation_frames": {
+        "mean_difference": 0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0,
+        "bootstrap_95_high": 0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_radio_capable_survivors_connected_pct": {
+        "mean_difference": 0.0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.0,
+        "bootstrap_95_high": 0.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      }
+    },
+    "87fd45229a11c3fd3a804c79eb05cf24fcf3b65eb91924a51c6062ac761cb816:cares:c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7": {
+      "delivered_completion_pct": {
+        "mean_difference": 0.0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.0,
+        "bootstrap_95_high": 0.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "priority_weighted_pct": {
+        "mean_difference": 0.0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.0,
+        "bootstrap_95_high": 0.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_uav_connectivity_pct": {
+        "mean_difference": 0.01666666666666572,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.01666666666666572,
+        "bootstrap_95_high": 0.01666666666666572,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "latency_p95_s": {
+        "mean_difference": -2.1999999999999837,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": -2.8999999999999684,
+        "bootstrap_95_high": -1.4999999999999991,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "separation_violation_frames": {
+        "mean_difference": 0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0,
+        "bootstrap_95_high": 0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_radio_capable_survivors_connected_pct": {
+        "mean_difference": 0.01666666666666572,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0.01666666666666572,
+        "bootstrap_95_high": 0.01666666666666572,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      }
+    },
+    "9c2e6a364217857f87af64d58e83e27c7047b89624f732086c7595569b541c9e:cares:c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7": {
+      "delivered_completion_pct": {
+        "mean_difference": 18.75,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 12.5,
+        "bootstrap_95_high": 25.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "priority_weighted_pct": {
+        "mean_difference": 21.052631578947363,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 14.03508771929824,
+        "bootstrap_95_high": 28.070175438596486,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_uav_connectivity_pct": {
+        "mean_difference": 4.038888888888052,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 2.6777777777772247,
+        "bootstrap_95_high": 5.3999999999988795,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "latency_p95_s": {
+        "mean_difference": 6.9975000000000085,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 5.885000000000025,
+        "bootstrap_95_high": 8.109999999999992,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "separation_violation_frames": {
+        "mean_difference": 0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0,
+        "bootstrap_95_high": 0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_radio_capable_survivors_connected_pct": {
+        "mean_difference": 82.84444444444652,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 82.00000000000203,
+        "bootstrap_95_high": 83.68888888889101,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      }
+    },
+    "a1d79eaf77709d229c82d64f81d15cb909819a38271a921f899b836f29ce555e:cares:c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7": {
+      "delivered_completion_pct": {
+        "mean_difference": 15.625,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 12.5,
+        "bootstrap_95_high": 18.75,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "priority_weighted_pct": {
+        "mean_difference": 20.175438596491222,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 17.5438596491228,
+        "bootstrap_95_high": 22.807017543859644,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_uav_connectivity_pct": {
+        "mean_difference": 4.399999999999085,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 2.9111111111105057,
+        "bootstrap_95_high": 5.888888888887664,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "latency_p95_s": {
+        "mean_difference": -5.417499999999994,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": -5.710000000000004,
+        "bootstrap_95_high": -5.124999999999984,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "separation_violation_frames": {
+        "mean_difference": 0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0,
+        "bootstrap_95_high": 0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_radio_capable_survivors_connected_pct": {
+        "mean_difference": 72.9944444444456,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 70.71111111111226,
+        "bootstrap_95_high": 75.27777777777897,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      }
+    },
+    "f6afab3e2a241dff1c152a054dd54621e46c34489bd759350903a2020079f64a:cares:c53fab5475814d461c688ec07944d264fd8d1a300578ee685f71b29d5386bbc7": {
+      "delivered_completion_pct": {
+        "mean_difference": 18.75,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 12.5,
+        "bootstrap_95_high": 25.0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "priority_weighted_pct": {
+        "mean_difference": 22.807017543859644,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 17.5438596491228,
+        "bootstrap_95_high": 28.070175438596486,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_uav_connectivity_pct": {
+        "mean_difference": 4.111111111110256,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 2.6999999999994397,
+        "bootstrap_95_high": 5.522222222221073,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "latency_p95_s": {
+        "mean_difference": -0.47999999999999154,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": -4.279999999999992,
+        "bootstrap_95_high": 3.320000000000009,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "separation_violation_frames": {
+        "mean_difference": 0,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 0,
+        "bootstrap_95_high": 0,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      },
+      "all_radio_capable_survivors_connected_pct": {
+        "mean_difference": 78.06666666666847,
+        "paired_seed_count": 2,
+        "bootstrap_95_low": 75.56666666666828,
+        "bootstrap_95_high": 80.56666666666865,
+        "sample_size_at_least_30": false,
+        "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+      }
+    }
+  },
+  "all_candidate_gates_passed": false,
+  "limits": "This tool does not accept a release: seed reservation, immutable protocol, model parity and per-family noninferiority require separate qualification gates. Small seed sets are development evidence. No cross-competitor or physical-flight superiority is established."
+}

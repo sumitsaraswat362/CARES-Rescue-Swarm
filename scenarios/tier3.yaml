@@ -1,0 +1,181 @@
+events:
+- poi:
+    id: 13
+    label: "Aftershock \u2014 Building Collapse!"
+    priority: 5
+    x: 2000
+    y: 1200
+  time_s: 120
+  type: new_poi
+- poi:
+    id: 14
+    label: Gas Line Rupture Detected
+    priority: 4
+    x: 700
+    y: 700
+  time_s: 240
+  type: new_poi
+failures:
+- time_window:
+  - 60
+  - 150
+  type: motor_failure
+  uav_index: 2
+- time_window:
+  - 150
+  - 250
+  type: comms_failure
+  uav_index: 5
+- time_window:
+  - 250
+  - 350
+  type: motor_failure
+  uav_index: 1
+- time_window:
+  - 350
+  - 450
+  type: battery_critical
+  uav_index: 7
+- time_window:
+  - 450
+  - 550
+  type: motor_failure
+  uav_index: 0
+- time_window:
+  - 550
+  - 650
+  type: comms_failure
+  uav_index: 4
+gcs:
+  label: Command Post Bravo
+  position:
+    x: 100
+    y: 1000
+hidden_pois:
+- id: 15
+  label: Unreported Structural Collapse
+  priority: 5
+  x: 1800
+  y: 1300
+- id: 16
+  label: Trapped Vehicle
+  priority: 4
+  x: 900
+  y: 300
+launch_pad:
+  position:
+    x: 150
+    y: 1000
+mbb_handoff:
+  fiedler_safety_margin: 0.05
+  handoff_horizon_s: 90.0
+  min_overlap_s: 10.0
+points_of_interest:
+- id: 1
+  label: Residential Block A
+  priority: 3
+  x: 400
+  y: 300
+- id: 2
+  label: Hospital (Critical)
+  priority: 5
+  x: 800
+  y: 600
+- id: 3
+  label: School Collapse
+  priority: 4
+  x: 1200
+  y: 200
+- id: 4
+  label: Water Treatment Plant
+  priority: 3
+  x: 1800
+  y: 500
+- id: 5
+  label: Industrial Park
+  priority: 2
+  x: 2400
+  y: 300
+- id: 6
+  label: Train Derailment
+  priority: 4
+  x: 2700
+  y: 900
+- id: 7
+  label: Trapped Miners
+  priority: 5
+  x: 2500
+  y: 1400
+- id: 8
+  label: Refugee Camp South
+  priority: 3
+  x: 1800
+  y: 1600
+- id: 9
+  label: Communications Tower
+  priority: 2
+  x: 1200
+  y: 1200
+- id: 10
+  label: Bridge Inspection
+  priority: 3
+  x: 500
+  y: 1500
+- id: 11
+  label: Road Assessment
+  priority: 1
+  x: 300
+  y: 800
+- id: 12
+  label: Government Building
+  priority: 4
+  x: 1000
+  y: 900
+recharge_stations:
+- label: Base Charger
+  x: 150
+  y: 1000
+- label: Forward Charger Alpha
+  x: 1500
+  y: 300
+- label: Forward Charger Bravo
+  x: 2800
+  y: 1800
+scenario:
+  description: 'Severe 8.1 magnitude earthquake in a dense urban corridor. Multiple
+    communication blackout zones, UAV hardware failures mid-mission, and new emergency
+    locations appearing dynamically.
+
+    '
+  name: "Earthquake Response \u2014 Dense Urban (Hard)"
+simulation:
+  duration_s: 900
+  time_scale: 5.0
+world:
+  height: 2000
+  obstacles:
+  - label: Collapsed Overpass
+    radius: 100
+    x: 600
+    y: 400
+  - label: Chemical Spill
+    radius: 120
+    x: 1500
+    y: 800
+  - label: Fire Front
+    radius: 80
+    x: 2200
+    y: 600
+  - label: Flooded Zone
+    radius: 70
+    x: 1000
+    y: 1400
+  - label: Gas Explosion
+    radius: 90
+    x: 2500
+    y: 1500
+  width: 3000
+  wind_vector:
+  - 3.0
+  - -2.0
+

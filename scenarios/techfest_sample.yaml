@@ -1,0 +1,23 @@
+scenario:
+  name: "Techfest 2026 Sample Scenario"
+  description: "Official sample constraints: 1000x1000m, 100m comm range, 10 POIs."
+
+world:
+  width: 1000
+  height: 1000
+
+points_of_interest:
+  - {id: 1, x: 200, y: 300, priority: 5, label: "Zone 1"}
+  - {id: 2, x: 800, y: 200, priority: 3, label: "Zone 2"}
+  - {id: 3, x: 500, y: 700, priority: 4, label: "Zone 3"}
+  - {id: 4, x: 900, y: 900, priority: 2, label: "Zone 4"}
+  - {id: 5, x: 100, y: 800, priority: 5, label: "Zone 5"}
+  - {id: 6, x: 500, y: 200, priority: 3, label: "Zone 6"}
+  - {id: 7, x: 300, y: 900, priority: 4, label: "Zone 7"}
+  - {id: 8, x: 700, y: 600, priority: 1, label: "Zone 8"}
+  - {id: 9, x: 800, y: 400, priority: 5, label: "Zone 9"}
+  - {id: 10, x: 200, y: 600, priority: 2, label: "Zone 10"}
+
+simulation:
+  duration_s: 2700
+  time_scale: 1.0

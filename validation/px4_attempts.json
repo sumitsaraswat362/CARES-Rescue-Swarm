@@ -1,0 +1,4 @@
+[
+  {"run_id":35502616278,"build_passed":false,"flight_attempted":false,"error":"PX4 version header generation: shallow NuttX checkout lacked release tags"},
+  {"run_id":35516926763,"build_passed":true,"flight_attempted":false,"error":"Read-only git provenance lookup rejected container mount ownership before simulator launch","fix":"Limit safe.directory exception to each explicit task checkout; catch provenance failures in gate_result.json"}
+]

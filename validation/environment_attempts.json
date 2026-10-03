@@ -1,0 +1,10 @@
+[
+  {
+    "scenario": "scenarios/analytic_environment_v2.yaml",
+    "seed": 100,
+    "source_sha256": "1dfdaf3704ede6cb85f1571303886eb5a2e9c4351d6a0973bba551e7cb5ef88b",
+    "status": "failed_export",
+    "error": "TypeError: Object of type int64 is not JSON serializable",
+    "metrics_accepted": false
+  }
+]

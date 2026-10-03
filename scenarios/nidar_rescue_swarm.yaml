@@ -1,0 +1,49 @@
+scenario:
+  name: "NIDAR 2.0 — Rescue Swarm: Flash Flood Response"
+  description: >
+    A severe flash flood has hit a semi-urban settlement near a river basin.
+    Roads are blocked, telecom towers are destroyed, and mobile connectivity is
+    unavailable. CARES must deploy a fully autonomous UAV swarm to locate
+    survivors and deliver medical supplies — without any external network.
+  challenge: "NIDAR 2.0 Rescue Swarm (MeitY × Drone Federation of India)"
+
+world:
+  width: 1000
+  height: 1000
+  comm_range_m: 100
+  mission_duration_s: 2700   # 45 minutes
+
+# 10 survivor/supply-drop locations (randomly distributed across flood zone)
+points_of_interest:
+  - {id: 1,  x: 120, y: 340, priority: 5, label: "Survivor - Rooftop Zone A"}
+  - {id: 2,  x: 780, y: 210, priority: 5, label: "Survivor - Rooftop Zone B"}
+  - {id: 3,  x: 450, y: 680, priority: 4, label: "Medical Supply Drop 1"}
+  - {id: 4,  x: 880, y: 920, priority: 3, label: "Survivor - Zone C"}
+  - {id: 5,  x: 90,  y: 820, priority: 5, label: "Survivor - Critical: Zone D"}
+  - {id: 6,  x: 510, y: 190, priority: 3, label: "Medical Supply Drop 2"}
+  - {id: 7,  x: 290, y: 910, priority: 4, label: "Survivor - Zone E"}
+  - {id: 8,  x: 720, y: 590, priority: 2, label: "Survey - Zone F"}
+  - {id: 9,  x: 810, y: 410, priority: 5, label: "Survivor - Critical: Zone G"}
+  - {id: 10, x: 180, y: 610, priority: 2, label: "Survey - Zone H"}
+
+swarm:
+  num_uavs: 10
+  gcs_position: [0, 0]
+  gcs_offset_m: 75
+
+# Disaster environment: GPS-degraded, comm-denied, high interference
+environment:
+  gps_degraded: true
+  telecom_denied: true
+  shadow_fading_sigma_db: 6.0
+  path_loss_exponent: 3.5
+  wind_speed_mps: 4.0
+  wind_direction_deg: 225
+
+# UAV failure injection (simulates drone loss in disaster conditions)
+failures:
+  - {uav_id: 3, time_s: 400, type: "battery_depletion"}
+  - {uav_id: 7, time_s: 800, type: "link_loss"}
+
+seed: 42
+mode: "cares"

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CARES recorded mission replay</title>
+<style>
+:root{font:16px system-ui;color:#e6edf3;background:#101820}body{max-width:1200px;margin:24px auto;padding:0 20px}h1{font-size:28px}p{color:#b9c8d4;line-height:1.5}.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:20px 0}button,input{font:inherit}button{padding:8px 16px;background:#203547;color:white;border:1px solid #7890a0;border-radius:6px}input[type=range]{flex:1;min-width:220px}canvas{width:100%;height:auto;background:#152531;border:1px solid #456;display:block}pre{white-space:pre-wrap;max-height:250px;overflow:auto;padding:16px;background:#182b39}label{display:block}#status{color:#f7d17a}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+<h1>CARES • recorded mission replay</h1>
+<p>Open a run's <strong>replay.jsonl</strong>, then its <strong>run_manifest.json</strong> and optionally <strong>events.jsonl</strong>. Files stay in this browser. This offline viewer shows recorded simulator positions and summary values; it does not simulate flight or independently audit a run.</p>
+<div class="controls"><label>Recorded states <input id="states" type="file" accept=".jsonl"></label><label>Run manifest <input id="manifest" type="file" accept=".json"></label><label>Events <input id="events" type="file" accept=".jsonl"></label></div>
+<p id="status" role="status">No recording loaded.</p>
+<div class="controls"><button id="play" disabled>Play</button><input id="seek" aria-label="Replay timeline" type="range" min="0" max="0" value="0" disabled><output id="time">0 s</output><label>Speed <select id="speed"><option value="1">1×</option><option value="5">5×</option><option value="20">20×</option></select></label></div>
+<canvas id="map" width="1100" height="650" aria-label="Top-down recorded UAV positions"></canvas>
+<div class="grid"><section><h2>Recorded metrics</h2><pre id="metrics">—</pre></section><section><h2>Events at this time</h2><pre id="event-list">—</pre></section></div>
+<p>Dots: active UAVs; red crosses: failed UAVs; squares: ground targets. Lines are advertised routes, not proof of radio delivery. The view is top-down; altitude appears beside each aircraft. Acquired tasks and GCS-delivered tasks are different measures. No interpolation is used.</p>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+let frames=[],events=[],manifest=null,index=0,playing=false,lastWall=0,replayTime=0;
+const ctx=$('map').getContext('2d');
+function lines(text){return text.split(/\r?\n/).filter(x=>x.trim()).map(JSON.parse);}
+function fail(error){$('status').textContent='Cannot load recording: '+error.message;}
+$('states').onchange=async e=>{try{const loaded=lines(await e.target.files[0].text());
+ if(!loaded.length||loaded.some((f,i)=>!Number.isFinite(f.time)||!Array.isArray(f.uavs)||(i&&f.time<loaded[i-1].time)))throw Error('Expected ordered replay.jsonl states.');
+ frames=loaded;index=0;playing=false;replayTime=frames[0].time;$('play').textContent='Play';$('play').disabled=false;$('seek').disabled=false;$('seek').max=frames.length-1;
+ $('status').textContent=`${frames.length} recorded states loaded. ${manifest?'Manifest loaded.':'Load the matching manifest for world bounds and targets.'}`;draw();}catch(error){fail(error);}};
+$('manifest').onchange=async e=>{try{const m=JSON.parse(await e.target.files[0].text());if(!m.world||!Array.isArray(m.tasks))throw Error('Expected run_manifest.json.');manifest=m;draw();}catch(error){fail(error);}};
+$('events').onchange=async e=>{try{events=lines(await e.target.files[0].text());draw();}catch(error){fail(error);}};
+$('seek').oninput=()=>{index=Number($('seek').value);replayTime=frames[index].time;draw();};
+$('play').onclick=()=>{if(index===frames.length-1){index=0;replayTime=frames[0].time;}playing=!playing;$('play').textContent=playing?'Pause':'Play';};
+function draw(){if(!frames.length)return;const f=frames[index];$('seek').value=index;$('time').textContent=f.time.toFixed(1)+' s';
+ const width=manifest?.world.width||Math.max(1,...frames.flatMap(x=>x.uavs.map(u=>u.pos[0])));
+ const height=manifest?.world.height||Math.max(1,...frames.flatMap(x=>x.uavs.map(u=>u.pos[1])));
+ const scale=Math.min(1020/width,570/height),point=p=>[40+p[0]*scale,610-p[1]*scale];ctx.clearRect(0,0,1100,650);ctx.strokeStyle='#47606f';ctx.strokeRect(40,610-height*scale,width*scale,height*scale);
+ ctx.font='13px system-ui';ctx.fillStyle='#96acbb';ctx.fillText(`${width} × ${height} m • top-down`,40,24);
+ for(const t of manifest?.tasks||[]){const [x,y]=point([t.x,t.y]);ctx.fillStyle='#ffca72';ctx.fillRect(x-3,y-3,6,6);ctx.fillText('PoI '+t.id,x+6,y);}
+ const byId=new Map(f.uavs.map(u=>[u.id,u]));ctx.strokeStyle='#4f737b';ctx.setLineDash([4,4]);
+ for(const u of f.uavs){for(let i=1;i<(u.route||[]).length;i++){const a=byId.get(u.route[i-1]),b=byId.get(u.route[i]);if(!a||!b)continue;ctx.beginPath();ctx.moveTo(...point(a.pos));ctx.lineTo(...point(b.pos));ctx.stroke();}}ctx.setLineDash([]);
+ for(const u of f.uavs){const [x,y]=point(u.pos);ctx.fillStyle=u.state==='failed'?'#ff7171':'#72e6c6';ctx.strokeStyle=ctx.fillStyle;
+ if(u.state==='failed'){ctx.beginPath();ctx.moveTo(x-5,y-5);ctx.lineTo(x+5,y+5);ctx.moveTo(x+5,y-5);ctx.lineTo(x-5,y+5);ctx.stroke();}else{ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fill();}
+ ctx.fillText(`U${u.id} · ${u.altitude.toFixed(1)} m · ${u.state}`,x+8,y-7);}
+ const m=f.metrics||{};const metrics={recorded_time_s:f.time,acquired_completion_pct:m.acquired_completion_pct,delivered_completion_pct:m.delivered_completion_pct,all_uav_connectivity_pct:m.all_uav_connectivity_pct,hop_pdr_pct:m.hop_pdr_pct,pending_observations:m.pending_observations,failed_uavs:m.failed_uavs};
+ $('metrics').textContent=JSON.stringify(metrics,null,2);$('event-list').textContent=events.filter(e=>e.time<=f.time&&e.time>f.time-5).slice(-30).map(e=>JSON.stringify(e)).join('\n')||'No loaded events in the preceding five seconds.';
+}
+function tick(now){const dt=lastWall?Math.min(1,(now-lastWall)/1000):0;lastWall=now;if(playing&&frames.length){replayTime+=dt*Number($('speed').value);while(index+1<frames.length&&frames[index+1].time<=replayTime)index++;if(index===frames.length-1){playing=false;$('play').textContent='Play';}draw();}requestAnimationFrame(tick);}requestAnimationFrame(tick);
+</script></html>

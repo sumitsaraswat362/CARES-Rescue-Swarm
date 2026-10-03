@@ -1,0 +1,539 @@
+{
+  "schema": "cares-degradation/v2",
+  "burst_probability": 0.15,
+  "definition": "failed_uavs counts permanent FAILED state; injected events include recoverable comms/battery disturbances",
+  "runs": [
+    {
+      "evidence_consistent": true,
+      "errors": [],
+      "recomputed": {
+        "surveyed_pois": 6,
+        "total_pois": 16,
+        "acquired_completion_pct": 37.5,
+        "delivered_completion_pct": 37.5,
+        "mission_completion_pct": 37.5,
+        "priority_weighted_pct": 33.333333333333336,
+        "on_time_priority_pct": 33.333333333333336,
+        "observation_delivery_pct": 100.0,
+        "latency_p50_s": 0.5,
+        "latency_p95_s": 2.474999999999987,
+        "communication_downtime_s": 792.200000000138,
+        "all_uav_connectivity_pct": 11.97777777777576,
+        "separation_violation_frames": 0,
+        "geofence_violation_samples": 0,
+        "depleted_battery_samples": 0,
+        "minimum_separation_m": 11.500056201005133,
+        "failed_uavs": 1,
+        "scheduled_failure_events": 2,
+        "injected_failure_events": 2,
+        "radio_failed_uavs": 1,
+        "battery_fault_uavs": 0
+      },
+      "safety_passed": true,
+      "scheduled_failures_due": 2,
+      "observed_failure_events": 2,
+      "acquired_full_task_ids": [
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "received_full_task_ids": [
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "seed": 100,
+      "mode": "cares",
+      "raw_trace_sha256": "b4fa5ce2edf5f44f8bfe06aa3bc85bc6448003dfa3d12146d763e0612dd34bc6",
+      "source_sha256": "154961a940841f2e3acff8fd5515259bb9186e09079fa05ef214914cc1f7848c",
+      "scenario": "scenarios/tier1.yaml",
+      "output": "logs/audit-gap-degradation-final/tier1-100-cares-burst0.15",
+      "configured_burst_probability": 0.15,
+      "handoffs": 0,
+      "duration_s": 900.0,
+      "failed_uavs": 1,
+      "radio_failed_uavs": 1,
+      "battery_fault_uavs": 0,
+      "resolved_failures": [
+        {
+          "time": 73.11023295937173,
+          "uav": 2,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 195.49270045140213,
+          "uav": 5,
+          "kind": "comms_failure"
+        }
+      ]
+    },
+    {
+      "evidence_consistent": true,
+      "errors": [],
+      "recomputed": {
+        "surveyed_pois": 7,
+        "total_pois": 16,
+        "acquired_completion_pct": 43.75,
+        "delivered_completion_pct": 43.75,
+        "mission_completion_pct": 43.75,
+        "priority_weighted_pct": 38.59649122807018,
+        "on_time_priority_pct": 38.59649122807018,
+        "observation_delivery_pct": 100.0,
+        "latency_p50_s": 0.5,
+        "latency_p95_s": 10.599999999999982,
+        "communication_downtime_s": 783.7000000001384,
+        "all_uav_connectivity_pct": 12.92222222222001,
+        "separation_violation_frames": 0,
+        "geofence_violation_samples": 0,
+        "depleted_battery_samples": 0,
+        "minimum_separation_m": 10.320753241165368,
+        "failed_uavs": 1,
+        "scheduled_failure_events": 2,
+        "injected_failure_events": 2,
+        "radio_failed_uavs": 1,
+        "battery_fault_uavs": 0
+      },
+      "safety_passed": true,
+      "scheduled_failures_due": 2,
+      "observed_failure_events": 2,
+      "acquired_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "received_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "seed": 101,
+      "mode": "cares",
+      "raw_trace_sha256": "e8e00f855f209ee0ef8e584768b8b25d2dfcbd8aa199074621ef366313543ab3",
+      "source_sha256": "154961a940841f2e3acff8fd5515259bb9186e09079fa05ef214914cc1f7848c",
+      "scenario": "scenarios/tier1.yaml",
+      "output": "logs/audit-gap-degradation-final/tier1-101-cares-burst0.15",
+      "configured_burst_probability": 0.15,
+      "handoffs": 0,
+      "duration_s": 900.0,
+      "failed_uavs": 1,
+      "radio_failed_uavs": 1,
+      "battery_fault_uavs": 0,
+      "resolved_failures": [
+        {
+          "time": 112.30369192541082,
+          "uav": 2,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 169.47544955341368,
+          "uav": 5,
+          "kind": "comms_failure"
+        }
+      ]
+    },
+    {
+      "evidence_consistent": true,
+      "errors": [],
+      "recomputed": {
+        "surveyed_pois": 6,
+        "total_pois": 16,
+        "acquired_completion_pct": 37.5,
+        "delivered_completion_pct": 37.5,
+        "mission_completion_pct": 37.5,
+        "priority_weighted_pct": 33.333333333333336,
+        "on_time_priority_pct": 33.333333333333336,
+        "observation_delivery_pct": 100.0,
+        "latency_p50_s": 1.8500000000000014,
+        "latency_p95_s": 9.0,
+        "communication_downtime_s": 792.6000000001379,
+        "all_uav_connectivity_pct": 11.933333333331326,
+        "separation_violation_frames": 0,
+        "geofence_violation_samples": 0,
+        "depleted_battery_samples": 0,
+        "minimum_separation_m": 11.455940528586407,
+        "failed_uavs": 2,
+        "scheduled_failure_events": 4,
+        "injected_failure_events": 4,
+        "radio_failed_uavs": 1,
+        "battery_fault_uavs": 1
+      },
+      "safety_passed": true,
+      "scheduled_failures_due": 4,
+      "observed_failure_events": 4,
+      "acquired_full_task_ids": [
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "received_full_task_ids": [
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "seed": 100,
+      "mode": "cares",
+      "raw_trace_sha256": "8b99b9bf9ead5817b70b47dd75cf1a54868be25b8854a3162c45a93ad7a83072",
+      "source_sha256": "154961a940841f2e3acff8fd5515259bb9186e09079fa05ef214914cc1f7848c",
+      "scenario": "scenarios/tier2.yaml",
+      "output": "logs/audit-gap-degradation-final/tier2-100-cares-burst0.15",
+      "configured_burst_probability": 0.15,
+      "handoffs": 0,
+      "duration_s": 900.0,
+      "failed_uavs": 2,
+      "radio_failed_uavs": 1,
+      "battery_fault_uavs": 1,
+      "resolved_failures": [
+        {
+          "time": 73.11023295937173,
+          "uav": 2,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 195.49270045140213,
+          "uav": 5,
+          "kind": "comms_failure"
+        },
+        {
+          "time": 327.0783805659022,
+          "uav": 1,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 420.55132269340277,
+          "uav": 7,
+          "kind": "battery_critical"
+        }
+      ]
+    },
+    {
+      "evidence_consistent": true,
+      "errors": [],
+      "recomputed": {
+        "surveyed_pois": 7,
+        "total_pois": 16,
+        "acquired_completion_pct": 43.75,
+        "delivered_completion_pct": 43.75,
+        "mission_completion_pct": 43.75,
+        "priority_weighted_pct": 38.59649122807018,
+        "on_time_priority_pct": 38.59649122807018,
+        "observation_delivery_pct": 100.0,
+        "latency_p50_s": 0.5,
+        "latency_p95_s": 0.7000000000000085,
+        "communication_downtime_s": 787.1000000001383,
+        "all_uav_connectivity_pct": 12.544444444442309,
+        "separation_violation_frames": 0,
+        "geofence_violation_samples": 0,
+        "depleted_battery_samples": 0,
+        "minimum_separation_m": 10.00451147260419,
+        "failed_uavs": 2,
+        "scheduled_failure_events": 4,
+        "injected_failure_events": 4,
+        "radio_failed_uavs": 1,
+        "battery_fault_uavs": 1
+      },
+      "safety_passed": true,
+      "scheduled_failures_due": 4,
+      "observed_failure_events": 4,
+      "acquired_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "received_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "seed": 101,
+      "mode": "cares",
+      "raw_trace_sha256": "976c1eaf1768b07d20f66a7b059b0b049c67c20851a2c017f7443bb33d8a7edc",
+      "source_sha256": "154961a940841f2e3acff8fd5515259bb9186e09079fa05ef214914cc1f7848c",
+      "scenario": "scenarios/tier2.yaml",
+      "output": "logs/audit-gap-degradation-final/tier2-101-cares-burst0.15",
+      "configured_burst_probability": 0.15,
+      "handoffs": 0,
+      "duration_s": 900.0,
+      "failed_uavs": 2,
+      "radio_failed_uavs": 1,
+      "battery_fault_uavs": 1,
+      "resolved_failures": [
+        {
+          "time": 112.30369192541082,
+          "uav": 2,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 169.47544955341368,
+          "uav": 5,
+          "kind": "comms_failure"
+        },
+        {
+          "time": 346.52511070611115,
+          "uav": 1,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 442.3976401676794,
+          "uav": 7,
+          "kind": "battery_critical"
+        }
+      ]
+    },
+    {
+      "evidence_consistent": true,
+      "errors": [],
+      "recomputed": {
+        "surveyed_pois": 7,
+        "total_pois": 16,
+        "acquired_completion_pct": 43.75,
+        "delivered_completion_pct": 43.75,
+        "mission_completion_pct": 43.75,
+        "priority_weighted_pct": 38.59649122807018,
+        "on_time_priority_pct": 38.59649122807018,
+        "observation_delivery_pct": 100.0,
+        "latency_p50_s": 0.5,
+        "latency_p95_s": 2.7599999999999776,
+        "communication_downtime_s": 787.7000000001382,
+        "all_uav_connectivity_pct": 12.477777777775657,
+        "separation_violation_frames": 0,
+        "geofence_violation_samples": 0,
+        "depleted_battery_samples": 0,
+        "minimum_separation_m": 10.003547110350922,
+        "failed_uavs": 3,
+        "scheduled_failure_events": 6,
+        "injected_failure_events": 6,
+        "radio_failed_uavs": 2,
+        "battery_fault_uavs": 1
+      },
+      "safety_passed": true,
+      "scheduled_failures_due": 6,
+      "observed_failure_events": 6,
+      "acquired_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "received_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "seed": 100,
+      "mode": "cares",
+      "raw_trace_sha256": "0ec38db682bab2e641faf3d3f4288d5392971e1ad7af6140197840baeae8ddbf",
+      "source_sha256": "154961a940841f2e3acff8fd5515259bb9186e09079fa05ef214914cc1f7848c",
+      "scenario": "scenarios/tier3.yaml",
+      "output": "logs/audit-gap-degradation-final/tier3-100-cares-burst0.15",
+      "configured_burst_probability": 0.15,
+      "handoffs": 0,
+      "duration_s": 900.0,
+      "failed_uavs": 3,
+      "radio_failed_uavs": 2,
+      "battery_fault_uavs": 1,
+      "resolved_failures": [
+        {
+          "time": 73.11023295937173,
+          "uav": 2,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 195.49270045140213,
+          "uav": 5,
+          "kind": "comms_failure"
+        },
+        {
+          "time": 327.0783805659022,
+          "uav": 1,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 420.55132269340277,
+          "uav": 7,
+          "kind": "battery_critical"
+        },
+        {
+          "time": 523.1958973033256,
+          "uav": 0,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 593.3514434895403,
+          "uav": 4,
+          "kind": "comms_failure"
+        }
+      ]
+    },
+    {
+      "evidence_consistent": true,
+      "errors": [],
+      "recomputed": {
+        "surveyed_pois": 7,
+        "total_pois": 16,
+        "acquired_completion_pct": 43.75,
+        "delivered_completion_pct": 43.75,
+        "mission_completion_pct": 43.75,
+        "priority_weighted_pct": 38.59649122807018,
+        "on_time_priority_pct": 38.59649122807018,
+        "observation_delivery_pct": 100.0,
+        "latency_p50_s": 0.5,
+        "latency_p95_s": 5.759999999999991,
+        "communication_downtime_s": 786.6000000001383,
+        "all_uav_connectivity_pct": 12.599999999997854,
+        "separation_violation_frames": 0,
+        "geofence_violation_samples": 0,
+        "depleted_battery_samples": 0,
+        "minimum_separation_m": 10.0,
+        "failed_uavs": 3,
+        "scheduled_failure_events": 6,
+        "injected_failure_events": 6,
+        "radio_failed_uavs": 2,
+        "battery_fault_uavs": 1
+      },
+      "safety_passed": true,
+      "scheduled_failures_due": 6,
+      "observed_failure_events": 6,
+      "acquired_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "received_full_task_ids": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "seed": 101,
+      "mode": "cares",
+      "raw_trace_sha256": "997b68c2e3fcb5a3410f09468f9c29d440fdf17ea925e662a772fc6c62580226",
+      "source_sha256": "154961a940841f2e3acff8fd5515259bb9186e09079fa05ef214914cc1f7848c",
+      "scenario": "scenarios/tier3.yaml",
+      "output": "logs/audit-gap-degradation-final/tier3-101-cares-burst0.15",
+      "configured_burst_probability": 0.15,
+      "handoffs": 0,
+      "duration_s": 900.0,
+      "failed_uavs": 3,
+      "radio_failed_uavs": 2,
+      "battery_fault_uavs": 1,
+      "resolved_failures": [
+        {
+          "time": 112.30369192541082,
+          "uav": 2,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 169.47544955341368,
+          "uav": 5,
+          "kind": "comms_failure"
+        },
+        {
+          "time": 346.52511070611115,
+          "uav": 1,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 442.3976401676794,
+          "uav": 7,
+          "kind": "battery_critical"
+        },
+        {
+          "time": 496.7138678196974,
+          "uav": 0,
+          "kind": "motor_failure"
+        },
+        {
+          "time": 616.347064453006,
+          "uav": 4,
+          "kind": "comms_failure"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "tier1": {
+      "failed_uavs": {
+        "mean": 1,
+        "std": 0.0
+      },
+      "observed_failure_events": {
+        "mean": 2,
+        "std": 0.0
+      },
+      "scheduled_failures_due": {
+        "mean": 2,
+        "std": 0.0
+      }
+    },
+    "tier2": {
+      "failed_uavs": {
+        "mean": 2,
+        "std": 0.0
+      },
+      "observed_failure_events": {
+        "mean": 4,
+        "std": 0.0
+      },
+      "scheduled_failures_due": {
+        "mean": 4,
+        "std": 0.0
+      }
+    },
+    "tier3": {
+      "failed_uavs": {
+        "mean": 3,
+        "std": 0.0
+      },
+      "observed_failure_events": {
+        "mean": 6,
+        "std": 0.0
+      },
+      "scheduled_failures_due": {
+        "mean": 6,
+        "std": 0.0
+      }
+    }
+  }
+}

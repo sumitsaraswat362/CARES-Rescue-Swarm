@@ -1,0 +1,515 @@
+{
+  "accepted": false,
+  "errors": [
+    "Raw evidence/safety failed: qualification-earthquake_hard-200-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-206-candidate",
+    "Raw evidence/safety failed: qualification-tier3-200-candidate",
+    "Raw evidence/safety failed: qualification-tier3-212-candidate",
+    "Raw evidence/safety failed: qualification-tier3-224-candidate",
+    "Raw evidence/safety failed: confirmation-earthquake_hard-302-candidate",
+    "Failed process or missing run: confirmation-earthquake_hard-308-candidate",
+    "Raw evidence/safety failed: confirmation-tier2-300-candidate",
+    "Raw evidence/safety failed: burst-earthquake_hard-402-candidate",
+    "Raw evidence/safety failed: burst-tier2-406-candidate",
+    "Raw evidence/safety failed: burst-tier3-402-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-201-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-219-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-225-candidate",
+    "Raw evidence/safety failed: qualification-tier3-201-candidate",
+    "Raw evidence/safety failed: qualification-tier3-207-candidate",
+    "Raw evidence/safety failed: qualification-tier3-225-candidate",
+    "Raw evidence/safety failed: confirmation-earthquake_hard-303-candidate",
+    "Raw evidence/safety failed: confirmation-tier2-301-candidate",
+    "Raw evidence/safety failed: confirmation-tier3-303-candidate",
+    "Raw evidence/safety failed: burst-tier2-401-candidate",
+    "Raw evidence/safety failed: burst-tier2-407-candidate",
+    "Raw evidence/safety failed: burst-tier3-403-candidate",
+    "Raw evidence/safety failed: burst-tier3-409-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-214-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-226-candidate",
+    "Raw evidence/safety failed: qualification-tier2-220-candidate",
+    "Raw evidence/safety failed: qualification-tier3-214-candidate",
+    "Raw evidence/safety failed: qualification-tier3-220-candidate",
+    "Raw evidence/safety failed: qualification-tier3-226-candidate",
+    "Raw evidence/safety failed: confirmation-earthquake_hard-304-candidate",
+    "Raw evidence/safety failed: confirmation-tier2-302-candidate",
+    "Raw evidence/safety failed: confirmation-tier2-308-candidate",
+    "Raw evidence/safety failed: confirmation-tier3-304-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-209-candidate",
+    "Raw evidence/safety failed: qualification-tier2-203-candidate",
+    "Failed process or missing run: qualification-tier2-227-candidate",
+    "Raw evidence/safety failed: qualification-tier3-209-candidate",
+    "Raw evidence/safety failed: qualification-tier3-227-candidate",
+    "Raw evidence/safety failed: confirmation-tier2-303-candidate",
+    "Raw evidence/safety failed: burst-earthquake_hard-405-candidate",
+    "Raw evidence/safety failed: burst-tier2-403-candidate",
+    "Raw evidence/safety failed: burst-tier3-405-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-222-candidate",
+    "Raw evidence/safety failed: qualification-tier2-210-candidate",
+    "Raw evidence/safety failed: qualification-tier2-222-candidate",
+    "Raw evidence/safety failed: qualification-tier2-228-candidate",
+    "Raw evidence/safety failed: qualification-tier3-210-candidate",
+    "Raw evidence/safety failed: qualification-tier3-222-candidate",
+    "Raw evidence/safety failed: qualification-tier3-228-candidate",
+    "Raw evidence/safety failed: confirmation-tier3-300-candidate",
+    "Raw evidence/safety failed: burst-tier2-404-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-211-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-217-candidate",
+    "Raw evidence/safety failed: qualification-earthquake_hard-223-candidate",
+    "Raw evidence/safety failed: qualification-tier2-223-candidate",
+    "Raw evidence/safety failed: qualification-tier3-217-candidate",
+    "Raw evidence/safety failed: confirmation-tier3-301-candidate",
+    "Raw evidence/safety failed: confirmation-tier3-307-candidate",
+    "Raw evidence/safety failed: burst-earthquake_hard-401-candidate",
+    "Raw evidence/safety failed: burst-earthquake_hard-407-candidate",
+    "Raw evidence/safety failed: burst-tier2-405-candidate",
+    "Missing pair: confirmation/scenarios/earthquake_hard.yaml/308",
+    "Missing pair: qualification/scenarios/tier2.yaml/227",
+    "Noninferiority margin exceeded: burst/scenarios/earthquake_basic.yaml/all_radio_capable_survivors_connected_pct"
+  ],
+  "observed_pairs": 300,
+  "required_runs": 600,
+  "intervals": {
+    "qualification/scenarios/earthquake_basic.yaml/delivered_completion_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/earthquake_basic.yaml/priority_weighted_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/earthquake_basic.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 0.013888888888889046,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 0.005000000000000189,
+      "bootstrap_95_high": 0.023333333333333903,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/earthquake_hard.yaml/delivered_completion_pct": {
+      "mean_difference": 20.833333333333332,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 17.916666666666668,
+      "bootstrap_95_high": 24.166666666666668,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/earthquake_hard.yaml/priority_weighted_pct": {
+      "mean_difference": 23.391812865497073,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 19.82456140350877,
+      "bootstrap_95_high": 27.134502923976605,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/earthquake_hard.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 67.6755555555573,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 57.213333333334916,
+      "bootstrap_95_high": 77.13518518518718,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier1.yaml/delivered_completion_pct": {
+      "mean_difference": 25.416666666666668,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 22.5,
+      "bootstrap_95_high": 29.166666666666668,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier1.yaml/priority_weighted_pct": {
+      "mean_difference": 27.368421052631575,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 23.859649122807014,
+      "bootstrap_95_high": 31.637426900584796,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier1.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 65.94851851852019,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 54.55037037037174,
+      "bootstrap_95_high": 76.61629629629819,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier2.yaml/delivered_completion_pct": {
+      "mean_difference": 17.887931034482758,
+      "paired_seed_count": 29,
+      "bootstrap_95_low": 15.086206896551724,
+      "bootstrap_95_high": 20.905172413793103,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier2.yaml/priority_weighted_pct": {
+      "mean_difference": 18.51179673321234,
+      "paired_seed_count": 29,
+      "bootstrap_95_low": 15.184513006654567,
+      "bootstrap_95_high": 21.89957652752571,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier2.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 63.42567049808579,
+      "paired_seed_count": 29,
+      "bootstrap_95_low": 53.343678160921,
+      "bootstrap_95_high": 72.55785440613187,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier3.yaml/delivered_completion_pct": {
+      "mean_difference": 17.291666666666668,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 14.375,
+      "bootstrap_95_high": 20.208333333333332,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier3.yaml/priority_weighted_pct": {
+      "mean_difference": 18.245614035087716,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 14.970760233918126,
+      "bootstrap_95_high": 21.754385964912277,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/tier3.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 66.64555555555712,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 63.03074074074265,
+      "bootstrap_95_high": 69.7762962962976,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/relay_rotation.yaml/delivered_completion_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/relay_rotation.yaml/priority_weighted_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "qualification/scenarios/relay_rotation.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 30,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": true,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/earthquake_basic.yaml/delivered_completion_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/earthquake_basic.yaml/priority_weighted_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/earthquake_basic.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 0.013333333333332576,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0.0033333333333303017,
+      "bootstrap_95_high": 0.02333333333333627,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/earthquake_hard.yaml/delivered_completion_pct": {
+      "mean_difference": 22.22222222222222,
+      "paired_seed_count": 9,
+      "bootstrap_95_low": 15.972222222222221,
+      "bootstrap_95_high": 27.77777777777778,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/earthquake_hard.yaml/priority_weighted_pct": {
+      "mean_difference": 24.75633528265107,
+      "paired_seed_count": 9,
+      "bootstrap_95_low": 17.738791423001945,
+      "bootstrap_95_high": 31.773879142300192,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/earthquake_hard.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 72.9617283950635,
+      "paired_seed_count": 9,
+      "bootstrap_95_low": 54.52345679012478,
+      "bootstrap_95_high": 83.02469135802677,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier1.yaml/delivered_completion_pct": {
+      "mean_difference": 25.625,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 21.25,
+      "bootstrap_95_high": 30,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier1.yaml/priority_weighted_pct": {
+      "mean_difference": 28.24561403508772,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 22.631578947368418,
+      "bootstrap_95_high": 33.684210526315795,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier1.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 73.8155555555574,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 57.77555555555702,
+      "bootstrap_95_high": 82.71777777777984,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier2.yaml/delivered_completion_pct": {
+      "mean_difference": 20.625,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 15.625,
+      "bootstrap_95_high": 25.625,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier2.yaml/priority_weighted_pct": {
+      "mean_difference": 22.807017543859647,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 17.36842105263158,
+      "bootstrap_95_high": 27.89473684210526,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier2.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 70.62888888889051,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 55.88111111111244,
+      "bootstrap_95_high": 78.63555555555736,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier3.yaml/delivered_completion_pct": {
+      "mean_difference": 18.75,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 15,
+      "bootstrap_95_high": 21.875,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier3.yaml/priority_weighted_pct": {
+      "mean_difference": 20.350877192982452,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 15.789473684210524,
+      "bootstrap_95_high": 24.03508771929824,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/tier3.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 70.35888888889008,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 68.1500000000012,
+      "bootstrap_95_high": 72.2611111111124,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/relay_rotation.yaml/delivered_completion_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/relay_rotation.yaml/priority_weighted_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "confirmation/scenarios/relay_rotation.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/earthquake_basic.yaml/delivered_completion_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/earthquake_basic.yaml/priority_weighted_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/earthquake_basic.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": -5.830000000000666,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": -7.981666666667576,
+      "bootstrap_95_high": -3.940000000000454,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/earthquake_hard.yaml/delivered_completion_pct": {
+      "mean_difference": 25.625,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 18.125,
+      "bootstrap_95_high": 33.125,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/earthquake_hard.yaml/priority_weighted_pct": {
+      "mean_difference": 28.596491228070175,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 20.526315789473685,
+      "bootstrap_95_high": 37.01754385964912,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/earthquake_hard.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 38.99222222222207,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 23.370000000000037,
+      "bootstrap_95_high": 51.85555555555509,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier1.yaml/delivered_completion_pct": {
+      "mean_difference": 31.25,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 26.875,
+      "bootstrap_95_high": 36.25,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier1.yaml/priority_weighted_pct": {
+      "mean_difference": 33.85964912280702,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 28.42105263157895,
+      "bootstrap_95_high": 39.29824561403509,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier1.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 40.385555555554994,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 25.05333333333253,
+      "bootstrap_95_high": 53.34777777777734,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier2.yaml/delivered_completion_pct": {
+      "mean_difference": 20.625,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 14.375,
+      "bootstrap_95_high": 25.625,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier2.yaml/priority_weighted_pct": {
+      "mean_difference": 22.280701754385962,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 15.087719298245611,
+      "bootstrap_95_high": 28.07017543859649,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier2.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 39.00777777777753,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 26.696666666666385,
+      "bootstrap_95_high": 49.92777777777747,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier3.yaml/delivered_completion_pct": {
+      "mean_difference": 18.125,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 13.125,
+      "bootstrap_95_high": 22.5,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier3.yaml/priority_weighted_pct": {
+      "mean_difference": 19.64912280701754,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 13.859649122807015,
+      "bootstrap_95_high": 24.736842105263154,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/tier3.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 48.238888888888745,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 45.300000000000146,
+      "bootstrap_95_high": 50.945555555554975,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/relay_rotation.yaml/delivered_completion_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/relay_rotation.yaml/priority_weighted_pct": {
+      "mean_difference": 0,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    },
+    "burst/scenarios/relay_rotation.yaml/all_radio_capable_survivors_connected_pct": {
+      "mean_difference": 0.07499999999999715,
+      "paired_seed_count": 10,
+      "bootstrap_95_low": 0,
+      "bootstrap_95_high": 0.17499999999999433,
+      "sample_size_at_least_30": false,
+      "method": "paired percentile bootstrap, 2000 resamples, RNG seed 731"
+    }
+  },
+  "runtime_source_hashes": {
+    "reference": [
+      "2363560016985ee91be20a55eb0378cb2eaf86c0e44929d7ae508dc4a591a1cb"
+    ],
+    "candidate": [
+      "4a03210ff281d59ca1dfd78377e58749224fb2de424bbc669ede98f79fb39d13"
+    ]
+  },
+  "scope": "Simulation evidence gate only. Browser rehearsal, downstream handoff, PX4 flight and final document gates remain separate."
+}

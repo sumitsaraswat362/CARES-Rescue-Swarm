@@ -1,0 +1,92 @@
+# ============================================================
+# Earthquake Disaster Response — HARD Scenario
+# 12 PoIs, 8 UAVs, 3 injected failures, 2 dynamic PoIs
+#
+# Failure times use 'time_window: [min, max]' instead of fixed 'time_s'.
+# The actual trigger time is sampled once at mission start using the
+# seeded RNG → different seeds produce different failure timings.
+# This is the primary driver of Monte Carlo variance.
+# ============================================================
+
+scenario:
+  name: "Earthquake Response — Dense Urban (Hard)"
+  description: >
+    Severe 8.1 magnitude earthquake in a dense urban corridor. Multiple
+    communication blackout zones, UAV hardware failures mid-mission,
+    and new emergency locations appearing dynamically.
+
+world:
+  width: 3000
+  height: 2000
+  wind_vector: [3.0, -2.0]  # 3 m/s east + 2 m/s south (south-easterly, ~3.6 m/s total)
+  obstacles:
+    - {x: 600,  y: 400,  radius: 100, label: "Collapsed Overpass"}
+    - {x: 1500, y: 800,  radius: 120, label: "Chemical Spill"}
+    - {x: 2200, y: 600,  radius: 80,  label: "Fire Front"}
+    - {x: 1000, y: 1400, radius: 70,  label: "Flooded Zone"}
+    - {x: 2500, y: 1500, radius: 90,  label: "Gas Explosion"}
+
+gcs:
+  position: {x: 100, y: 1000}
+  label: "Command Post Bravo"
+
+launch_pad:
+  position: {x: 150, y: 1000}
+
+recharge_stations:
+  - {x: 150,  y: 1000, label: "Base Charger"}
+  - {x: 1500, y: 300,  label: "Forward Charger Alpha"}
+  - {x: 2800, y: 1800, label: "Forward Charger Bravo"}
+
+points_of_interest:
+  - {id: 1,  x: 400,  y: 300,  priority: 3, label: "Residential Block A"}
+  - {id: 2,  x: 800,  y: 600,  priority: 5, label: "Hospital (Critical)"}
+  - {id: 3,  x: 1200, y: 200,  priority: 4, label: "School Collapse"}
+  - {id: 4,  x: 1800, y: 500,  priority: 3, label: "Water Treatment Plant"}
+  - {id: 5,  x: 2400, y: 300,  priority: 2, label: "Industrial Park"}
+  - {id: 6,  x: 2700, y: 900,  priority: 4, label: "Train Derailment"}
+  - {id: 7,  x: 2500, y: 1400, priority: 5, label: "Trapped Miners"}
+  - {id: 8,  x: 1800, y: 1600, priority: 3, label: "Refugee Camp South"}
+  - {id: 9,  x: 1200, y: 1200, priority: 2, label: "Communications Tower"}
+  - {id: 10, x: 500,  y: 1500, priority: 3, label: "Bridge Inspection"}
+  - {id: 11, x: 300,  y: 800,  priority: 1, label: "Road Assessment"}
+  - {id: 12, x: 1000, y: 900,  priority: 4, label: "Government Building"}
+
+hidden_pois:
+  - {id: 15, x: 1800, y: 1300, priority: 5, label: "Unreported Structural Collapse"}
+  - {id: 16, x: 900,  y: 300,  priority: 4, label: "Trapped Vehicle"}
+
+events:
+  - time_s: 120
+    type: new_poi
+    poi: {id: 13, x: 2000, y: 1200, priority: 5, label: "Aftershock — Building Collapse!"}
+  - time_s: 240
+    type: new_poi
+    poi: {id: 14, x: 700, y: 700, priority: 4, label: "Gas Line Rupture Detected"}
+
+# Failures use 'time_window' — sampled at mission init from seeded RNG.
+# Each Monte Carlo seed gets a different actual failure time within the window.
+failures:
+  - uav_index: 2
+    type: motor_failure
+    time_window: [60, 150]    # Sampled in [60s, 150s] — was fixed at 90s
+    description: "UAV-3 motor burnout over residential zone"
+  - uav_index: 5
+    type: comms_failure
+    time_window: [150, 250]   # Sampled in [150s, 250s] — was fixed at 180s
+    description: "UAV-6 communication module failure — goes dark"
+  - uav_index: 7
+    type: battery_critical
+    time_window: [250, 380]   # Sampled in [250s, 380s] — was fixed at 300s
+    description: "UAV-8 rapid battery drain — forced RTL"
+
+simulation:
+  duration_s: 900    # 15 min — required for real A* pathfinding across 3000x2000m map
+  time_scale: 5.0
+
+# Make-Before-Break relay handoff configuration (Pillar 1)
+mbb_handoff:
+  handoff_horizon_s: 90.0   # Seconds before battery depletion to begin relay swap
+  min_overlap_s: 10.0       # Minimum overlap period (new relay in place before old departs)
+  fiedler_safety_margin: 0.05  # Abort handoff if Fiedler dips below this
+

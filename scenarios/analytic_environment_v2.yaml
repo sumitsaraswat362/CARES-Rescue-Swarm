@@ -1,0 +1,34 @@
+scenario:
+  name: Analytic v2 terrain camera and detour fixture
+world:
+  width: 600
+  height: 400
+  wind_vector: [1, 0]
+  obstacles:
+    - {x: 250, y: 200, radius: 25, label: Circular no-fly proxy}
+gcs:
+  position: {x: 100, y: 200}
+launch_pad:
+  position: {x: 100, y: 200}
+swarm:
+  num_uavs: 2
+simulation:
+  duration_s: 120
+points_of_interest:
+  - {id: 1, x: 360, y: 200, priority: 5, label: Target behind obstacle}
+  - {id: 2, x: 340, y: 280, priority: 3, label: Sloped-ground target}
+initial_uavs:
+  - {id: 0, position: [100, 180]}
+  - {id: 1, position: [120, 210]}
+recharge_stations:
+  - {x: 100, y: 200, label: Base}
+resilience:
+  range_m: 500
+  packet_loss: 0.02
+  observation_ttl_s: 90
+environment_model:
+  version: analytic-v2
+  terrain: {base_m: 0, slope_x: 0.005, slope_y: 0}
+  camera: {fov_deg: 60, min_agl_m: 10, max_agl_m: 100, max_speed_mps: 1}
+  coverage_cell_m: 10
+  dynamics: {max_acceleration_mps2: 3, mass_kg: 2.5, payload_kg: 0.25, efficiency: 0.7, drag_coefficient: 0.01}

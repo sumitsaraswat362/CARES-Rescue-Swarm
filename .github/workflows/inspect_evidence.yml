@@ -1,0 +1,29 @@
+name: Inspect retained qualification and flight evidence
+on:
+  push:
+    branches: [codex/competitive-release]
+    paths: ['.github/workflows/inspect_evidence.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read existing artifacts without rerunning missions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p evidence-inspection
+          gh run download 35553416694 --repo "$GITHUB_REPOSITORY" --name px4-measured-evidence --dir evidence-inspection
+          python tools/audit_px4_recording.py evidence-inspection/logs/px4-ci/flight.jsonl evidence-inspection/logs/px4-ci/waypoints.json --out evidence-inspection/independent-audit.json
+          cat evidence-inspection/logs/px4-ci/gate_result.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-inspection
+          path: evidence-inspection
+          retention-days: 30

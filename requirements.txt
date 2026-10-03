@@ -1,0 +1,9 @@
+pygame>=2.5.0
+numpy>=1.24.0
+scipy>=1.11.0
+matplotlib>=3.7.0
+pyyaml>=6.0
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+websockets>=12.0
+

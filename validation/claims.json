@@ -1,0 +1,220 @@
+{
+  "schema": "cares-claims/v1",
+  "claims": [
+    {
+      "id": "hard-100-delivered_completion_pct",
+      "status": "verified",
+      "scope": "development run, not qualification",
+      "source_sha256": "3b0f4176ef95d22f30bd7e42617daf1dc0ece155377b233e2f5b6e07ba6b0a10",
+      "implementation": [
+        {
+          "path": "src/resilience/agent.py",
+          "symbol": "tick"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/relay_recovery_runs.json",
+          "sha256": "a55ed45b99639524e128a1e9e2c038cf41ee06043787f1c6cceb6fed78275023",
+          "keys": [
+            1,
+            "recomputed",
+            "delivered_completion_pct"
+          ],
+          "equals": 56.25
+        }
+      ]
+    },
+    {
+      "id": "hard-100-separation_violation_frames",
+      "status": "verified",
+      "scope": "development run, not qualification",
+      "source_sha256": "3b0f4176ef95d22f30bd7e42617daf1dc0ece155377b233e2f5b6e07ba6b0a10",
+      "implementation": [
+        {
+          "path": "src/resilience/agent.py",
+          "symbol": "tick"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/relay_recovery_runs.json",
+          "sha256": "a55ed45b99639524e128a1e9e2c038cf41ee06043787f1c6cceb6fed78275023",
+          "keys": [
+            1,
+            "recomputed",
+            "separation_violation_frames"
+          ],
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "hard-101-delivered_completion_pct",
+      "status": "verified",
+      "scope": "development run, not qualification",
+      "source_sha256": "3b0f4176ef95d22f30bd7e42617daf1dc0ece155377b233e2f5b6e07ba6b0a10",
+      "implementation": [
+        {
+          "path": "src/resilience/agent.py",
+          "symbol": "tick"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/relay_recovery_runs.json",
+          "sha256": "a55ed45b99639524e128a1e9e2c038cf41ee06043787f1c6cceb6fed78275023",
+          "keys": [
+            2,
+            "recomputed",
+            "delivered_completion_pct"
+          ],
+          "equals": 56.25
+        }
+      ]
+    },
+    {
+      "id": "hard-101-separation_violation_frames",
+      "status": "verified",
+      "scope": "development run, not qualification",
+      "source_sha256": "3b0f4176ef95d22f30bd7e42617daf1dc0ece155377b233e2f5b6e07ba6b0a10",
+      "implementation": [
+        {
+          "path": "src/resilience/agent.py",
+          "symbol": "tick"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/relay_recovery_runs.json",
+          "sha256": "a55ed45b99639524e128a1e9e2c038cf41ee06043787f1c6cceb6fed78275023",
+          "keys": [
+            2,
+            "recomputed",
+            "separation_violation_frames"
+          ],
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "px4-live-flight",
+      "status": "blocked",
+      "scope": "DDS exchange observed; vehicle never armed in attempt 3. GCS-heartbeat repair under test.",
+      "implementation": [
+        {
+          "path": "tools/run_px4_gate.py",
+          "symbol": "main"
+        }
+      ]
+    },
+    {
+      "id": "600-run-qualification",
+      "status": "blocked",
+      "implementation": [
+        {
+          "path": "tools/qualification.py",
+          "symbol": "run"
+        }
+      ],
+      "scope": "600 attempts executed; rejected: 60 unsafe and 2 timeouts. See qualification_v1_acceptance.json."
+    },
+    {
+      "id": "final-proposal",
+      "status": "planned",
+      "scope": "Write after final evidence freeze"
+    },
+    {
+      "id": "analytic-fixture-100-delivery",
+      "status": "verified",
+      "scope": "Two-target analytic-v2 development fixture only; source d461dd85b1ed9d49520b115ab7f3e7d60817844ce1722818aa80215ddbb31d12",
+      "implementation": [
+        {
+          "path": "src/resilience/environment.py",
+          "symbol": "CameraModel"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/analytic_environment_final.json",
+          "sha256": "fb045849d838387a3233e2e8dade630fb45c0f7d98d38e2099106ba70f398275",
+          "keys": [
+            0,
+            "recomputed",
+            "delivered_completion_pct"
+          ],
+          "equals": 100.0
+        }
+      ]
+    },
+    {
+      "id": "analytic-fixture-101-delivery",
+      "status": "verified",
+      "scope": "Two-target analytic-v2 development fixture only; source d461dd85b1ed9d49520b115ab7f3e7d60817844ce1722818aa80215ddbb31d12",
+      "implementation": [
+        {
+          "path": "src/resilience/environment.py",
+          "symbol": "CameraModel"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/analytic_environment_final.json",
+          "sha256": "fb045849d838387a3233e2e8dade630fb45c0f7d98d38e2099106ba70f398275",
+          "keys": [
+            1,
+            "recomputed",
+            "delivered_completion_pct"
+          ],
+          "equals": 100.0
+        }
+      ]
+    },
+    {
+      "id": "service-placement-hard-100-delivery",
+      "status": "verified",
+      "scope": "Development seed only; runtime 4a03210ff281d59ca1dfd78377e58749224fb2de424bbc669ede98f79fb39d13",
+      "implementation": [
+        {
+          "path": "src/resilience/agent.py",
+          "symbol": "reposition_relay"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/service_placement_development.json",
+          "sha256": "37d7aa6ea1eb14b3224fe438a8a5f46f717fa59a515f06e5244ff565ae01ea71",
+          "keys": [
+            0,
+            "recomputed",
+            "delivered_completion_pct"
+          ],
+          "equals": 81.25
+        }
+      ]
+    },
+    {
+      "id": "service-placement-hard-101-delivery",
+      "status": "verified",
+      "scope": "Development seed only; runtime 4a03210ff281d59ca1dfd78377e58749224fb2de424bbc669ede98f79fb39d13",
+      "implementation": [
+        {
+          "path": "src/resilience/agent.py",
+          "symbol": "reposition_relay"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "validation/service_placement_development.json",
+          "sha256": "37d7aa6ea1eb14b3224fe438a8a5f46f717fa59a515f06e5244ff565ae01ea71",
+          "keys": [
+            1,
+            "recomputed",
+            "delivered_completion_pct"
+          ],
+          "equals": 75.0
+        }
+      ]
+    }
+  ]
+}

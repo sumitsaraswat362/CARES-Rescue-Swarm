@@ -1,0 +1,31 @@
+scenario:
+  name: Relay-required evidence mission
+world:
+  width: 1600
+  height: 800
+  obstacles: []
+  wind_vector: [0, 0]
+gcs:
+  position: {x: 100, y: 400}
+launch_pad:
+  position: {x: 100, y: 400}
+simulation:
+  duration_s: 120
+points_of_interest:
+  - {id: 1, x: 1100, y: 400, priority: 5, label: Remote hospital}
+  - {id: 2, x: 1000, y: 450, priority: 3, label: Remote road}
+recharge_stations:
+  - {x: 100, y: 400, label: Base}
+relay_stations:
+  - {uav_id: 0, x: 500, y: 400}
+  - {uav_id: 1, x: 800, y: 400}
+initial_uavs:
+  - {id: 0, position: [500, 400]}
+  - {id: 1, position: [800, 400]}
+  - {id: 2, position: [1000, 400]}
+  - {id: 3, position: [1000, 450]}
+resilience:
+  range_m: 500
+  admission_range_m: 350
+  packet_loss: 0.02
+  observation_ttl_s: 90

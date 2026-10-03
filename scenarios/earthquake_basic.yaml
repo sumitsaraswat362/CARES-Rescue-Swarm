@@ -1,0 +1,49 @@
+# ============================================================
+# CARES — Earthquake Disaster Response Scenario (Basic)
+# 5 Points of Interest, 8 UAVs, No injected failures
+# ============================================================
+
+scenario:
+  name: "Earthquake Response — Kathmandu Valley"
+  description: >
+    A 7.2 magnitude earthquake has disrupted all terrestrial communication
+    in the Kathmandu Valley. A GCS is established at the southern perimeter.
+    UAVs must survey 5 critical locations and maintain relay connectivity.
+
+world:
+  width: 2000          # meters
+  height: 1500         # meters
+  obstacles:           # No-fly zones (collapsed buildings, fire zones)
+    - {x: 800, y: 600, radius: 80, label: "Collapsed Bridge"}
+    - {x: 1200, y: 900, radius: 60, label: "Fire Zone"}
+    - {x: 500, y: 1100, radius: 50, label: "Gas Leak"}
+
+gcs:
+  position: {x: 100, y: 750}
+  label: "Forward Operating Base"
+
+launch_pad:
+  position: {x: 150, y: 750}
+
+recharge_stations:
+  - {x: 150, y: 750, label: "Base Charger"}
+  - {x: 1000, y: 200, label: "Forward Charger Alpha"}
+
+points_of_interest:
+  - {id: 1, x: 400,  y: 300,  priority: 3, label: "Hospital District"}
+  - {id: 2, x: 900,  y: 450,  priority: 5, label: "Trapped Survivors (School)"}
+  - {id: 3, x: 1400, y: 350,  priority: 4, label: "Dam Structural Check"}
+  - {id: 4, x: 1600, y: 1000, priority: 2, label: "Power Substation"}
+  - {id: 5, x: 700,  y: 1200, priority: 4, label: "Refugee Camp"}
+
+# Dynamic events (injected during simulation)
+events: []
+
+# Failure injection
+failures: []
+
+simulation:
+  duration_s: 600       # 10 minutes simulated
+  time_scale: 5.0       # 5x real-time
+  seed: 42
+

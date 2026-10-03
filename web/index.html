@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CARES — Swarm Command Center</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Status -->
+  <div id="connection-status" class="connecting">● CONNECTING</div>
+  <div id="sim-clock">
+    <span class="time-value" id="clock-cur">0.0s</span>
+    <span class="time-max" id="clock-max">/ 600.0s</span>
+  </div>
+
+  <!-- HUD Panel -->
+  <div id="hud" class="panel">
+    <div class="header">
+      <div class="logo">CARES</div>
+      <div class="sub">COMMAND CENTER</div>
+    </div>
+    <div id="scenario-name">Loading...</div>
+    <p id="command-status" role="status" style="font-size:12px">No commands sent.</p>
+    <a href="replay.html" style="color:#7ee0c5">Offline recorded replay</a>
+    
+    <div class="metric-grid">
+      <div class="metric-card full-width">
+        <div class="label">GCS Delivery</div>
+        <div class="value" id="m-mission">0%</div>
+        <div class="progress-track"><div class="progress-fill" id="m-mission-bar" style="width:0%"></div></div>
+      </div>
+      <div class="metric-card full-width">
+        <div class="label">Priority Delivery</div>
+        <div class="value" id="m-priority">0%</div>
+        <div class="progress-track"><div class="progress-fill" id="m-priority-bar" style="width:0%"></div></div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="label">PoIs Acquired</div>
+        <div class="value sm" id="m-pois">0 / 0</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Active UAVs</div>
+        <div class="value sm" id="m-uavs">0 / 0</div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="label">Connectivity</div>
+        <div class="value sm" id="m-conn">0%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Per-hop Delivery</div>
+        <div class="value sm" id="m-fiedler">0.000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fleet Panel -->
+  <div id="fleet-panel" class="panel">
+    <div class="panel-title">Fleet Status</div>
+    <div class="fleet-list" id="fleet-list">
+      <!-- Generated via JS -->
+    </div>
+  </div>
+
+  <!-- Controls Panel -->
+  <div id="controls" class="panel">
+    <div class="panel-title">Command</div>
+    <button class="ctrl-btn" id="btn-pause">
+      <span class="icon">⏯</span> Pause
+      <span class="ctrl-key">Space</span>
+    </button>
+    <button class="ctrl-btn" id="btn-speed-up">
+      <span class="icon">⏩</span> Speed +
+      <span class="ctrl-key">+</span>
+    </button>
+    <button class="ctrl-btn" id="btn-speed-down">
+      <span class="icon">⏪</span> Speed −
+      <span class="ctrl-key">−</span>
+    </button>
+    <div class="chaos-section" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 15px; padding-top: 15px;">
+      <div style="font-size: 10px; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Chaos Controls</div>
+      
+      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+        <select id="uav-select-kill" style="flex: 1; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; padding: 4px;">
+          <option value="1">UAV-1</option>
+          <option value="2">UAV-2</option>
+          <option value="3">UAV-3</option>
+          <option value="4">UAV-4</option>
+          <option value="5">UAV-5</option>
+          <option value="6">UAV-6</option>
+          <option value="7">UAV-7</option>
+          <option value="8">UAV-8</option>
+        </select>
+        <button class="ctrl-btn danger" id="btn-kill-uav" style="flex: 2; min-width: 0;">
+          <span class="icon">💥</span> Kill Motor
+        </button>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+        <select id="uav-select-spoof" style="flex: 1; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; padding: 4px;">
+          <option value="1">UAV-1</option>
+          <option value="2">UAV-2</option>
+          <option value="3">UAV-3</option>
+          <option value="4">UAV-4</option>
+          <option value="5">UAV-5</option>
+          <option value="6">UAV-6</option>
+          <option value="7">UAV-7</option>
+          <option value="8">UAV-8</option>
+        </select>
+        <button class="ctrl-btn warn" id="btn-spoof-gps" style="flex: 2; min-width: 0;">
+          <span class="icon">📡</span> Spoof GPS
+        </button>
+      </div>
+
+      <button class="ctrl-btn warn" id="btn-burst-outage" style="width: 100%; margin-bottom: 8px;">
+        <span class="icon">⚡</span> Trigger Comm Outage
+      </button>
+
+      <button class="ctrl-btn warn" id="btn-poi" style="width: 100%;">
+        <span class="icon">📍</span> Inject PoI
+      </button>
+    </div>
+    <button class="ctrl-btn" id="btn-reset">
+      <span class="icon">🔄</span> Hard Reset
+      <span class="ctrl-key">R</span>
+    </button>
+    <div style="margin-top:10px; text-align:center; font-family:var(--font-mono); font-size:10px; color:var(--text-dim)">
+      Sim Speed: <span id="m-speed" style="color:var(--accent)">1.0x</span>
+    </div>
+  </div>
+
+  <!-- Event Log -->
+  <div id="event-log" class="panel">
+    <div class="panel-title">System Intel</div>
+    <details open><summary>Delivery evidence</summary><pre id="delivery-evidence">Waiting for telemetry…</pre></details>
+    <div class="log-list" id="log-list"></div>
+  </div>
+
+  <!-- Explainability Feed (Phase 3) -->
+  <div id="explain-panel" class="panel" style="bottom: 20px; right: 20px; left: auto; top: auto; max-width: 400px; max-height: 300px; overflow-y: auto;">
+    <div class="panel-title" style="color: #ffd700;">🧠 Swarm Narration</div>
+    <div class="log-list" id="explain-list" style="font-size: 11px;"></div>
+  </div>
+
+  <!-- Minimap -->
+  <div id="minimap-container">
+    <span class="minimap-title">Tactical Map</span>
+    <canvas id="minimap"></canvas>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div id="bottom-bar">
+    <div class="shortcut"><kbd>Space</kbd> Pause</div>
+    <div class="shortcut"><kbd>+</kbd><kbd>−</kbd> Speed</div>
+    <div class="shortcut"><kbd>F</kbd> Inject Failure</div>
+    <div class="shortcut"><kbd>P</kbd> Inject PoI</div>
+    <div class="shortcut"><kbd>R</kbd> Reset</div>
+    <div class="shortcut"><kbd>1-8</kbd> Focus UAV</div>
+    <div class="shortcut"><kbd>0</kbd> Map View</div>
+    <div class="shortcut" style="margin-left: 20px">🖱 Orbit / Scroll Zoom</div>
+  </div>
+
+  <!-- End Overlay -->
+  <div id="end-overlay">
+    <div id="end-card">
+      <h2>MISSION COMPLETE</h2>
+      <div id="end-stats"></div>
+      <button class="ctrl-btn" style="margin-top:24px; justify-content:center" id="btn-end-reset">
+        <span class="icon">🔄</span> Restart Scenario
+      </button>
+    </div>
+  </div>
+  
+  <!-- Tooltip -->
+  <div id="tooltip">
+    <div class="tt-title" id="tt-title">Object</div>
+    <div id="tt-content"></div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
+

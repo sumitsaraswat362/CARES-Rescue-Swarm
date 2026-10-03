@@ -1,0 +1,161 @@
+name: PX4 measured feasibility
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/px4_sitl.yml'
+      - 'tools/run_px4_gate.py'
+      - 'tools/run_px4_swarm_gate.py'
+      - 'tools/sitl_gcs.py'
+      - 'src/px4_bridge/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  single-vehicle:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    container: ros:humble-ros-base-jammy
+    steps:
+      - name: Install checkout prerequisites
+        run: |
+          apt-get update -q
+          apt-get install -y git sudo wget gnupg lsb-release python3-pip python3-colcon-common-extensions
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: PX4/PX4-Autopilot
+          ref: 6ea3539157ca358c70a515878b77077af7d4611d
+          fetch-depth: 0
+          submodules: recursive
+          path: flight-deps/PX4-Autopilot
+      - uses: actions/checkout@v4
+        with:
+          repository: PX4/px4_msgs
+          ref: 392e831c1f659429ca83902e66820d7094591410
+          path: flight-deps/ros_ws/src/px4_msgs
+      - uses: actions/checkout@v4
+        with:
+          repository: eProsima/Micro-XRCE-DDS-Agent
+          ref: 73622810d984349b80bbac0ef55fc0b694d62222
+          path: flight-deps/xrce
+      - uses: actions/cache/restore@v4
+        id: flight-cache
+        with:
+          path: |
+            flight-deps/PX4-Autopilot/build
+            flight-deps/ros_ws/build
+            flight-deps/ros_ws/install
+            flight-deps/xrce/build
+          key: px4-jammy-humble-6ea3539-392e831-7362281-v1
+      - name: Build simulator and message bridge
+        shell: bash
+        run: |
+          git -C flight-deps/PX4-Autopilot/platforms/nuttx/NuttX/nuttx fetch --tags origin
+          bash flight-deps/PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
+          python3 -m pip install 'empy==3.3.4' pyros-genmsg 'pymavlink>=2.4.41,<3'
+          cmake -S flight-deps/xrce -B flight-deps/xrce/build -DCMAKE_INSTALL_PREFIX=/usr/local
+          cmake --build flight-deps/xrce/build -j2
+          cmake --install flight-deps/xrce/build
+          ldconfig
+          source /opt/ros/humble/setup.bash
+          cd flight-deps/ros_ws
+          colcon build --packages-select px4_msgs
+          cd ../PX4-Autopilot
+          make px4_sitl_default -j2
+      - uses: actions/cache/save@v4
+        if: steps.flight-cache.outputs.cache-hit != 'true'
+        with:
+          path: |
+            flight-deps/PX4-Autopilot/build
+            flight-deps/ros_ws/build
+            flight-deps/ros_ws/install
+            flight-deps/xrce/build
+          key: px4-jammy-humble-6ea3539-392e831-7362281-v1
+      - name: Run three-iteration cold-start flight with 5s survey dwell
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          source flight-deps/ros_ws/install/local_setup.bash
+          python3 tools/run_px4_gate.py --px4 flight-deps/PX4-Autopilot --out logs/px4-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: px4-single-vehicle-evidence
+          path: |
+            logs/px4-ci
+          if-no-files-found: warn
+
+  swarm-fault-injection:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    container: ros:humble-ros-base-jammy
+    steps:
+      - name: Install checkout prerequisites
+        run: |
+          apt-get update -q
+          apt-get install -y git sudo wget gnupg lsb-release python3-pip python3-colcon-common-extensions
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: PX4/PX4-Autopilot
+          ref: 6ea3539157ca358c70a515878b77077af7d4611d
+          fetch-depth: 0
+          submodules: recursive
+          path: flight-deps/PX4-Autopilot
+      - uses: actions/checkout@v4
+        with:
+          repository: PX4/px4_msgs
+          ref: 392e831c1f659429ca83902e66820d7094591410
+          path: flight-deps/ros_ws/src/px4_msgs
+      - uses: actions/checkout@v4
+        with:
+          repository: eProsima/Micro-XRCE-DDS-Agent
+          ref: 73622810d984349b80bbac0ef55fc0b694d62222
+          path: flight-deps/xrce
+      - uses: actions/cache/restore@v4
+        id: flight-cache
+        with:
+          path: |
+            flight-deps/PX4-Autopilot/build
+            flight-deps/ros_ws/build
+            flight-deps/ros_ws/install
+            flight-deps/xrce/build
+          key: px4-jammy-humble-6ea3539-392e831-7362281-v1
+      - name: Build simulator and message bridge
+        shell: bash
+        run: |
+          git -C flight-deps/PX4-Autopilot/platforms/nuttx/NuttX/nuttx fetch --tags origin
+          bash flight-deps/PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
+          python3 -m pip install 'empy==3.3.4' pyros-genmsg 'pymavlink>=2.4.41,<3'
+          cmake -S flight-deps/xrce -B flight-deps/xrce/build -DCMAKE_INSTALL_PREFIX=/usr/local
+          cmake --build flight-deps/xrce/build -j2
+          cmake --install flight-deps/xrce/build
+          ldconfig
+          source /opt/ros/humble/setup.bash
+          cd flight-deps/ros_ws
+          colcon build --packages-select px4_msgs
+          cd ../PX4-Autopilot
+          make px4_sitl_default -j2
+      - uses: actions/cache/save@v4
+        if: steps.flight-cache.outputs.cache-hit != 'true'
+        with:
+          path: |
+            flight-deps/PX4-Autopilot/build
+            flight-deps/ros_ws/build
+            flight-deps/ros_ws/install
+            flight-deps/xrce/build
+          key: px4-jammy-humble-6ea3539-392e831-7362281-v1
+      - name: Run three-vehicle relay-loss fault-injection mission
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          source flight-deps/ros_ws/install/local_setup.bash
+          python3 tools/run_px4_swarm_gate.py --px4 flight-deps/PX4-Autopilot --out logs/px4-swarm --timeout 300
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: px4-swarm-fault-injection-evidence
+          path: |
+            logs/px4-swarm
+          if-no-files-found: warn

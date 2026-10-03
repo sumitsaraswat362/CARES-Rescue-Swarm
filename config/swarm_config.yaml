@@ -1,0 +1,45 @@
+# ============================================================
+# CARES — Communication-Aware Resilient Emergency Swarm
+# Swarm Configuration
+# ============================================================
+
+swarm:
+  num_uavs: 8
+  
+uav_defaults:
+  max_speed: 5.0            # m/s (from sample scenario)
+  cruise_speed: 3.5         # m/s
+  max_altitude: 100.0       # meters (from sample scenario)
+  mass: 2.5                 # kg
+  
+  # Battery Model
+  battery:
+    capacity_wh: 200.0      # Watt-hours
+    hover_power_w: 150.0    # Watts during hover
+    cruise_power_w: 120.0   # Watts during cruise flight
+    charge_rate_wh: 100.0   # Watt-hours per minute charging
+    critical_threshold: 0.15 # Return-to-base at 15%
+    warning_threshold: 0.30  # Warning at 30%
+    init_min_frac: 0.70     # Minimum initial charge fraction
+  
+  comms:
+    max_range: 100.0        # meters (from sample scenario)
+    reliable_range: 80.0    # meters
+    frequency_ghz: 2.4
+    tx_power_dbm: 10.0      # dBm 
+    rx_sensitivity_dbm: -95.0 
+    packet_size_bytes: 256
+    heartbeat_interval_ms: 500
+    heartbeat_timeout_ms: 2000
+  
+  # Sensors
+  sensors:
+    camera_fov_deg: 60.0
+    survey_radius: 30.0     # meters
+    survey_time_s: 10.0     # seconds
+  
+  # Safety
+  safety:
+    min_separation: 20.0    # meters (from sample scenario)
+    geofence_margin: 20.0   # meters
+    max_bank_angle_deg: 30.0

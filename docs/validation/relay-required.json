@@ -1,0 +1,210 @@
+{
+  "runs": [
+    {
+      "duration_s": 120.0,
+      "total_pois": 2,
+      "surveyed_pois": 2,
+      "acquired_completion_pct": 100.0,
+      "mission_completion_pct": 100.0,
+      "delivered_completion_pct": 100.0,
+      "priority_weighted_pct": 100.0,
+      "on_time_priority_pct": 100.0,
+      "observation_delivery_pct": 100.0,
+      "latency_p50_s": 0.7000000000000011,
+      "latency_p95_s": 0.7000000000000026,
+      "minimum_separation_m": 13.726426182845488,
+      "separation_violation_frames": 0,
+      "geofence_violation_samples": 0,
+      "depleted_battery_samples": 0,
+      "communication_downtime_s": 0.0,
+      "all_uav_connectivity_pct": 100.0,
+      "any_uav_connectivity_pct": 100.0,
+      "per_uav_connectivity_pct": {
+        "0": 100.0,
+        "1": 100.0,
+        "2": 100.0,
+        "3": 100.0,
+        "4": 100.0,
+        "5": 100.0,
+        "6": 100.0,
+        "7": 100.0
+      },
+      "contacts_measured": false,
+      "expired_observations": 0,
+      "evicted_observations": 0,
+      "enqueued": 2200,
+      "hop_drops": 197,
+      "hop_attempts": 9160,
+      "expired_packets": 0,
+      "received": 8901,
+      "queue_bytes": 0,
+      "inflight_packets": 36,
+      "hop_pdr_pct": 97.84934497816595,
+      "seed": 100,
+      "mode": "cares",
+      "scenario": "Relay-required evidence mission",
+      "scenario_sha256": "351468c49f85347f29a3e3e7f40f297d01df4055a4564762c013905ccd34939e",
+      "config_sha256": "d59ee89d2957eba4ec1d65e0ebe14d7b851dddc59fc78dd07cd7af8865a2d350",
+      "source_sha256": "c5072f77e00d5a7dcd1b71d82ccf1ad8141039340b74bb36b49dd4a5a154f056",
+      "schema": "cares-evidence/v2",
+      "total_uavs": 8,
+      "failed_uavs": 0,
+      "pending_observations": 0,
+      "tasks_per_uav": {
+        "UAV-1": 0,
+        "UAV-2": 0,
+        "UAV-3": 1,
+        "UAV-4": 1,
+        "UAV-5": 0,
+        "UAV-6": 0,
+        "UAV-7": 0,
+        "UAV-8": 0
+      },
+      "mbb_handoffs_initiated": 0,
+      "mbb_handoffs_completed": 0,
+      "contact_loss_detections": 0,
+      "replacement_dispatches": 0
+    },
+    {
+      "duration_s": 120.0,
+      "total_pois": 2,
+      "surveyed_pois": 0,
+      "acquired_completion_pct": 0.0,
+      "mission_completion_pct": 0.0,
+      "delivered_completion_pct": 0.0,
+      "priority_weighted_pct": 0.0,
+      "on_time_priority_pct": 0.0,
+      "observation_delivery_pct": 0.0,
+      "latency_p50_s": null,
+      "latency_p95_s": null,
+      "minimum_separation_m": 13.726426182845488,
+      "separation_violation_frames": 0,
+      "geofence_violation_samples": 0,
+      "depleted_battery_samples": 0,
+      "communication_downtime_s": 119.99999999999746,
+      "all_uav_connectivity_pct": 0.0,
+      "any_uav_connectivity_pct": 100.0,
+      "per_uav_connectivity_pct": {
+        "0": 100.0,
+        "1": 0.0,
+        "2": 72.66666666666765,
+        "3": 72.58333333333431,
+        "4": 100.0,
+        "5": 100.0,
+        "6": 100.0,
+        "7": 100.0
+      },
+      "contacts_measured": false,
+      "expired_observations": 0,
+      "evicted_observations": 0,
+      "enqueued": 2160,
+      "hop_drops": 511,
+      "hop_attempts": 3106,
+      "expired_packets": 360,
+      "received": 2585,
+      "queue_bytes": 1787,
+      "inflight_packets": 10,
+      "hop_pdr_pct": 83.54797166773986,
+      "seed": 100,
+      "mode": "direct",
+      "scenario": "Relay-required evidence mission",
+      "scenario_sha256": "351468c49f85347f29a3e3e7f40f297d01df4055a4564762c013905ccd34939e",
+      "config_sha256": "d59ee89d2957eba4ec1d65e0ebe14d7b851dddc59fc78dd07cd7af8865a2d350",
+      "source_sha256": "c5072f77e00d5a7dcd1b71d82ccf1ad8141039340b74bb36b49dd4a5a154f056",
+      "schema": "cares-evidence/v2",
+      "total_uavs": 8,
+      "failed_uavs": 0,
+      "pending_observations": 0,
+      "tasks_per_uav": {
+        "UAV-1": 0,
+        "UAV-2": 0,
+        "UAV-3": 0,
+        "UAV-4": 0,
+        "UAV-5": 0,
+        "UAV-6": 0,
+        "UAV-7": 0,
+        "UAV-8": 0
+      },
+      "mbb_handoffs_initiated": 0,
+      "mbb_handoffs_completed": 0,
+      "contact_loss_detections": 13,
+      "replacement_dispatches": 0
+    }
+  ],
+  "summary": {
+    "cares": {
+      "delivered_completion_pct": {
+        "n": 1,
+        "mean": 100.0,
+        "min": 100.0,
+        "max": 100.0,
+        "std": null
+      },
+      "priority_weighted_pct": {
+        "n": 1,
+        "mean": 100.0,
+        "min": 100.0,
+        "max": 100.0,
+        "std": null
+      },
+      "all_uav_connectivity_pct": {
+        "n": 1,
+        "mean": 100.0,
+        "min": 100.0,
+        "max": 100.0,
+        "std": null
+      },
+      "separation_violation_frames": {
+        "n": 1,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "std": null
+      },
+      "latency_p95_s": {
+        "n": 1,
+        "mean": 0.7000000000000026,
+        "min": 0.7000000000000026,
+        "max": 0.7000000000000026,
+        "std": null
+      }
+    },
+    "direct": {
+      "delivered_completion_pct": {
+        "n": 1,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std": null
+      },
+      "priority_weighted_pct": {
+        "n": 1,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std": null
+      },
+      "all_uav_connectivity_pct": {
+        "n": 1,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std": null
+      },
+      "separation_violation_frames": {
+        "n": 1,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "std": null
+      },
+      "latency_p95_s": {
+        "n": 0,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "std": null
+      }
+    }
+  }
+}

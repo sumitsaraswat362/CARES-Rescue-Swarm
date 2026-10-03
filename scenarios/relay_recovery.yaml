@@ -1,0 +1,76 @@
+events:
+- poi:
+    id: 3
+    label: New emergency
+    priority: 5
+    x: 1150
+    y: 470
+  time_s: 25
+  type: new_poi
+failures:
+- time_s: 12
+  type: motor_failure
+  uav_index: 1
+gcs:
+  position:
+    x: 100
+    y: 400
+initial_uavs:
+- id: 0
+  position:
+  - 500
+  - 400
+- id: 1
+  position:
+  - 800
+  - 400
+- id: 2
+  position:
+  - 1000
+  - 400
+- id: 3
+  position:
+  - 1000
+  - 450
+launch_pad:
+  position:
+    x: 100
+    y: 400
+points_of_interest:
+- id: 1
+  label: Remote hospital
+  priority: 5
+  x: 1100
+  y: 400
+- id: 2
+  label: Remote road
+  priority: 3
+  x: 1000
+  y: 450
+recharge_stations:
+- label: Base
+  x: 100
+  y: 400
+relay_stations:
+- uav_id: 0
+  x: 500
+  y: 400
+- uav_id: 1
+  x: 800
+  y: 400
+resilience:
+  admission_range_m: 350
+  observation_ttl_s: 90
+  packet_loss: 0.02
+  range_m: 500
+scenario:
+  name: Relay loss and new emergency
+simulation:
+  duration_s: 120
+world:
+  height: 800
+  obstacles: []
+  width: 1600
+  wind_vector:
+  - 0
+  - 0

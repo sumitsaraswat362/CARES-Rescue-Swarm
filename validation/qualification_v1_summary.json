@@ -1,0 +1,372 @@
+{
+  "scope": "Rejected candidate; descriptive results include unsafe runs and exclude timed-out processes from completed-run means",
+  "workflow_run": 35534036901,
+  "candidate_commit": "3138a8a50b4ed91a7e17d114fe0294bd7541fc4e",
+  "attempted": 600,
+  "completed": 598,
+  "passed": 538,
+  "unsafe": 60,
+  "timeouts": 2,
+  "groups": [
+    {
+      "stage": "burst",
+      "family": "earthquake_basic",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "burst",
+      "family": "earthquake_basic",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "burst",
+      "family": "earthquake_hard",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 6,
+      "mean_delivered_pct": 69.375,
+      "std_delivered_pct": 13.645435744844013
+    },
+    {
+      "stage": "burst",
+      "family": "earthquake_hard",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 43.75,
+      "std_delivered_pct": 4.166666666666667
+    },
+    {
+      "stage": "burst",
+      "family": "relay_rotation",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "burst",
+      "family": "relay_rotation",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "burst",
+      "family": "tier1",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 72.5,
+      "std_delivered_pct": 7.905694150420948
+    },
+    {
+      "stage": "burst",
+      "family": "tier1",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 41.25,
+      "std_delivered_pct": 4.370036867375632
+    },
+    {
+      "stage": "burst",
+      "family": "tier2",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 4,
+      "mean_delivered_pct": 60.625,
+      "std_delivered_pct": 8.863353077576104
+    },
+    {
+      "stage": "burst",
+      "family": "tier2",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 40.0,
+      "std_delivered_pct": 3.227486121839514
+    },
+    {
+      "stage": "burst",
+      "family": "tier3",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 6,
+      "mean_delivered_pct": 56.25,
+      "std_delivered_pct": 6.588078458684124
+    },
+    {
+      "stage": "burst",
+      "family": "tier3",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 38.125,
+      "std_delivered_pct": 3.547788826234667
+    },
+    {
+      "stage": "confirmation",
+      "family": "earthquake_basic",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "family": "earthquake_basic",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "family": "earthquake_hard",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 9,
+      "safe": 6,
+      "mean_delivered_pct": 65.97222222222223,
+      "std_delivered_pct": 9.936866681426517
+    },
+    {
+      "stage": "confirmation",
+      "family": "earthquake_hard",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 43.75,
+      "std_delivered_pct": 2.946278254943948
+    },
+    {
+      "stage": "confirmation",
+      "family": "relay_rotation",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "family": "relay_rotation",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "family": "tier1",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 68.75,
+      "std_delivered_pct": 7.795119555779045
+    },
+    {
+      "stage": "confirmation",
+      "family": "tier1",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 43.125,
+      "std_delivered_pct": 1.976423537605237
+    },
+    {
+      "stage": "confirmation",
+      "family": "tier2",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 5,
+      "mean_delivered_pct": 60.625,
+      "std_delivered_pct": 7.246886304552536
+    },
+    {
+      "stage": "confirmation",
+      "family": "tier2",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 40.0,
+      "std_delivered_pct": 3.227486121839514
+    },
+    {
+      "stage": "confirmation",
+      "family": "tier3",
+      "side": "candidate",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 5,
+      "mean_delivered_pct": 59.375,
+      "std_delivered_pct": 5.311478659992484
+    },
+    {
+      "stage": "confirmation",
+      "family": "tier3",
+      "side": "reference",
+      "attempted": 10,
+      "completed": 10,
+      "safe": 10,
+      "mean_delivered_pct": 40.625,
+      "std_delivered_pct": 3.294039229342062
+    },
+    {
+      "stage": "qualification",
+      "family": "earthquake_basic",
+      "side": "candidate",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "qualification",
+      "family": "earthquake_basic",
+      "side": "reference",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "qualification",
+      "family": "earthquake_hard",
+      "side": "candidate",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 18,
+      "mean_delivered_pct": 63.333333333333336,
+      "std_delivered_pct": 8.64364759104401
+    },
+    {
+      "stage": "qualification",
+      "family": "earthquake_hard",
+      "side": "reference",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 42.5,
+      "std_delivered_pct": 2.5427381385780388
+    },
+    {
+      "stage": "qualification",
+      "family": "relay_rotation",
+      "side": "candidate",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "qualification",
+      "family": "relay_rotation",
+      "side": "reference",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 100,
+      "std_delivered_pct": 0.0
+    },
+    {
+      "stage": "qualification",
+      "family": "tier1",
+      "side": "candidate",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 66.04166666666667,
+      "std_delivered_pct": 8.47844206709331
+    },
+    {
+      "stage": "qualification",
+      "family": "tier1",
+      "side": "reference",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 40.625,
+      "std_delivered_pct": 3.577196696702119
+    },
+    {
+      "stage": "qualification",
+      "family": "tier2",
+      "side": "candidate",
+      "attempted": 30,
+      "completed": 29,
+      "safe": 23,
+      "mean_delivered_pct": 56.89655172413793,
+      "std_delivered_pct": 8.573609123293107
+    },
+    {
+      "stage": "qualification",
+      "family": "tier2",
+      "side": "reference",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 38.958333333333336,
+      "std_delivered_pct": 3.150043331210818
+    },
+    {
+      "stage": "qualification",
+      "family": "tier3",
+      "side": "candidate",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 15,
+      "mean_delivered_pct": 55.833333333333336,
+      "std_delivered_pct": 7.860127810373206
+    },
+    {
+      "stage": "qualification",
+      "family": "tier3",
+      "side": "reference",
+      "attempted": 30,
+      "completed": 30,
+      "safe": 30,
+      "mean_delivered_pct": 38.541666666666664,
+      "std_delivered_pct": 2.369056386184073
+    }
+  ]
+}
